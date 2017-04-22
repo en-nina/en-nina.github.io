@@ -57,10 +57,11 @@
     <link href="http://oxy.pub/2016/04/24/ssm2/"/>
     <id>http://oxy.pub/2016/04/24/ssm2/</id>
     <published>2016-04-23T16:00:00.000Z</published>
-    <updated>2017-04-22T09:35:18.000Z</updated>
+    <updated>2017-04-22T09:44:55.000Z</updated>
     
     <content type="html"><![CDATA[<p><em>操作系统：Mac OS</em></p>
 <p><strong>在上一篇文章intellij idea 2016 gradle搭建 web工程基础上进行如下操作</strong></p>
+<p><strong>demo源码已经迁移至Github</strong>    &lt;<a href="https://github.com/enamor/ssm" target="_blank" rel="external">https://github.com/enamor/ssm</a></p>
 <p><strong>整体目录结构如下：</strong></p>
 <p><img src="/2016/04/24/ssm2/directory.png" alt=""></p>
 <p><strong>1、gradle进行项目jar包引入 bulid.gradle 文件dependencies 下加入</strong></p>
