@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
-  <updated>2017-06-01T09:18:03.000Z</updated>
+  <updated>2017-06-01T11:09:59.000Z</updated>
   <id>http://oxy.pub/</id>
   
   <author>
@@ -20,10 +20,14 @@
     <link href="http://oxy.pub/2017/06/01/iOSTinyPoint/"/>
     <id>http://oxy.pub/2017/06/01/iOSTinyPoint/</id>
     <published>2017-06-01T07:28:57.000Z</published>
-    <updated>2017-06-01T09:18:03.000Z</updated>
+    <updated>2017-06-01T11:09:59.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
-<li><strong>Masonry实现动画更新约束</strong></li>
+<li><strong>UIView 视频全屏 masonry 约束设置</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">UIView *player = [[UIView alloc] init];</div><div class="line">[self.view addSubview:player];</div><div class="line"></div><div class="line">CGFloat wid = [UIScreen mainScreen].bounds.size.width;</div><div class="line">CGFloat hei = [UIScreen mainScreen].bounds.size.height;</div><div class="line">CGFloat rate = wid &lt; hei ? (wid/hei) : (hei/wid);</div><div class="line">[player mas_makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">    make.top.equalTo(self.view);</div><div class="line">    make.left.right.equalTo(self.view);</div><div class="line">    make.height.mas_equalTo(player.mas_width).multipliedBy(rate);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<ul>
+<li>Masonry实现动画更新约束**</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 告诉self.view约束需要更新</div><div class="line">[self.view setNeedsUpdateConstraints];</div><div class="line">// 调用此方法告诉self.view检测是否需要更新约束，若需要则更新，下面添加动画效果才起作用</div><div class="line">[self.view updateConstraintsIfNeeded];</div><div class="line"></div><div class="line">[UIView animateWithDuration:0.3 animations:^&#123;</div><div class="line">  [self.view layoutIfNeeded];</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
 <ul>
