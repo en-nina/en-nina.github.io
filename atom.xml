@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
-  <updated>2017-04-22T09:34:06.000Z</updated>
+  <updated>2017-06-01T07:37:53.000Z</updated>
   <id>http://oxy.pub/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS小知识点集锦</title>
+    <link href="http://oxy.pub/2017/06/01/iOSTinyPoint/"/>
+    <id>http://oxy.pub/2017/06/01/iOSTinyPoint/</id>
+    <published>2017-06-01T07:28:57.000Z</published>
+    <updated>2017-06-01T07:37:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><strong>Masonry实现动画更新约束</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 告诉self.view约束需要更新</div><div class="line">[self.view setNeedsUpdateConstraints];</div><div class="line">// 调用此方法告诉self.view检测是否需要更新约束，若需要则更新，下面添加动画效果才起作用</div><div class="line">[self.view updateConstraintsIfNeeded];</div><div class="line"></div><div class="line">[UIView animateWithDuration:0.3 animations:^&#123;</div><div class="line">  [self.view layoutIfNeeded];</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>UISlider更改进度条的粗细</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//需要重写UISlider的trackRectForBounds 方法</div><div class="line">- (CGRect)trackRectForBounds:(CGRect)bounds &#123;</div><div class="line">    bounds.origin.y = bounds.size.height / 2.0 - 2;</div><div class="line">    bounds.size.height = 4;</div><div class="line">    return bounds;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      自己记录的小知识点
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://oxy.pub/categories/iOS/"/>
+    
+    
+      <category term="Objective-C" scheme="http://oxy.pub/tags/Objective-C/"/>
+    
+  </entry>
   
   <entry>
     <title>Alamofire4.4 网络请求的封装</title>
