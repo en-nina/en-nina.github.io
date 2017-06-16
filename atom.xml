@@ -70,26 +70,6 @@
   </entry>
   
   <entry>
-    <title>一句话实现AVPlayer视频播放</title>
-    <link href="http://oxy.pub/2017/05/01/niplayer/"/>
-    <id>http://oxy.pub/2017/05/01/niplayer/</id>
-    <published>2017-05-01T10:28:57.000Z</published>
-    <updated>2017-06-16T20:30:32.000Z</updated>
-    
-    <summary type="html">
-    
-      由于近期项目和视频相关的比较多，而项目中别人封装的不甚满意，所以自己进行了封装，希望有更好的扩展性，同时希望大家多多提取意见，以便于更好的封装。
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://oxy.pub/categories/iOS/"/>
-    
-    
-      <category term="Objective-C" scheme="http://oxy.pub/tags/Objective-C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Alamofire4.4 网络请求的封装</title>
     <link href="http://oxy.pub/2017/03/11/Alamofire/"/>
     <id>http://oxy.pub/2017/03/11/Alamofire/</id>
