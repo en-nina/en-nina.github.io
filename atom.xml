@@ -74,7 +74,7 @@
     <link href="http://oxy.pub/2017/05/01/niplayer/"/>
     <id>http://oxy.pub/2017/05/01/niplayer/</id>
     <published>2017-05-01T10:28:57.000Z</published>
-    <updated>2017-06-16T20:51:47.000Z</updated>
+    <updated>2017-06-16T20:55:14.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>源码地址：</strong>Github    <a href="https://github.com/enamor/NIPlayer" target="_blank" rel="external">https://github.com/enamor/NIPlayer</a></p>
 <p><em>基于AVPlaye封装的视频播放器 、一句话即可实现视频的播放 支持横屏、竖屏，监听屏幕旋转，上下滑动调节音量、屏幕亮度，左右滑动调节播放进度，快进画面预览等</em></p>
@@ -83,9 +83,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//此次一句话即可实现播放 同时适配横竖屏、竖立的视频</div><div class="line">[[NIPlayer sharedPlayer] playWithUrl:_url onView:playView];</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//对播放器内部对以下状态做了监听，可以更好的自己处理各种情况</div><div class="line">typedef NS_ENUM(NSInteger, NIAVPlayerStatus) &#123;</div><div class="line">    NIAVPlayerStatusLoading = 0,     // 加载视频</div><div class="line">    NIAVPlayerStatusReadyToPlay,     // 准备好播放</div><div class="line">    NIAVPlayerStatusIsPlaying,       // 正在播放</div><div class="line">    NIAVPlayerStatusIsPaused,        // 已经暂停</div><div class="line">    NIAVPlayerStatusPlayEnd,         // 播放结束</div><div class="line">    NIAVPlayerStatusCacheData,       // 缓冲视频</div><div class="line">    NIAVPlayerStatusCacheEnd,        // 缓冲结束</div><div class="line">    NIAVPlayerStatusPlayStop,        // 播放中断 （多是没网）</div><div class="line">    NIAVPlayerStatusItemFailed,      // 视频资源问题</div><div class="line">    NIAVPlayerStatusEnterBack,       // 进入后台</div><div class="line">    NIAVPlayerStatusBecomeActive,    // 从后台返回</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p><strong>预览：</strong></p>
-<p><img src="/2017/05/01/niplayer/showhow1.png" alt=""></p>
-<p><img src="/2017/05/01/niplayer/showhow3.png" alt=""></p>
-<p><img src="/2017/05/01/niplayer/showhow4.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
