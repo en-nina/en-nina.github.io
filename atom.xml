@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
-  <updated>2017-07-07T10:32:36.000Z</updated>
+  <updated>2017-07-10T08:28:12.000Z</updated>
   <id>http://oxy.pub/</id>
   
   <author>
@@ -20,14 +20,18 @@
     <link href="http://oxy.pub/2017/06/01/iOSTinyPoint/"/>
     <id>http://oxy.pub/2017/06/01/iOSTinyPoint/</id>
     <published>2017-06-01T07:28:57.000Z</published>
-    <updated>2017-07-07T10:32:36.000Z</updated>
+    <updated>2017-07-10T08:28:12.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
-<li>禁用左侧手势返回功能</li>
+<li><strong>去除空格</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//去除首尾空格：  </div><div class="line">NSString * content = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];</div><div class="line"></div><div class="line">//去除首尾空格和换行：</div><div class="line">NSString *content = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>禁用左侧手势返回功能</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//关闭手势返回</div><div class="line">- (void)viewDidAppear:(BOOL)animated  </div><div class="line">&#123;  </div><div class="line">    [super viewDidAppear:animated];  </div><div class="line">    // 禁用返回手势  </div><div class="line">    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) &#123;  </div><div class="line">        self.navigationController.interactivePopGestureRecognizer.enabled = NO;  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line">//重新开启手势返回</div><div class="line">- (void)viewWillDisappear:(BOOL)animated  </div><div class="line">&#123;  </div><div class="line">    [super viewWillDisappear:animated];  </div><div class="line">    // 开启返回手势  </div><div class="line">    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) &#123;  </div><div class="line">        self.navigationController.interactivePopGestureRecognizer.enabled = YES;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li><em>UIView 视频全屏 masonry 约束设置*</em></li>
+<li><strong>UIView 视频全屏 masonry 约束设置</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">UIView *player = [[UIView alloc] init];</div><div class="line">[self.view addSubview:player];</div><div class="line"></div><div class="line">CGFloat wid = [UIScreen mainScreen].bounds.size.width;</div><div class="line">CGFloat hei = [UIScreen mainScreen].bounds.size.height;</div><div class="line">CGFloat rate = wid &lt; hei ? (wid/hei) : (hei/wid);</div><div class="line">[player mas_makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line">    make.top.equalTo(self.view);</div><div class="line">    make.left.right.equalTo(self.view);</div><div class="line">    make.height.mas_equalTo(player.mas_width).multipliedBy(rate);</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
 <ul>
@@ -59,11 +63,11 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//方法一</div><div class="line">- (IBAction)dismiss:(id)sender &#123;</div><div class="line">    if (self.presentingViewController) &#123;</div><div class="line">        [self dismissViewControllerAnimated:YES completion:nil];</div><div class="line">    &#125; else &#123;</div><div class="line">        [self.navigationController popViewControllerAnimated:YES];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//方法二</div><div class="line">- (IBAction)dismiss:(id)sender &#123;</div><div class="line">    if (self.navigationController.topViewController == self) &#123;</div><div class="line">        [self.navigationController popViewControllerAnimated:YES];</div><div class="line">    &#125; else &#123;</div><div class="line">        [self dismissViewControllerAnimated:YES completion:nil];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>导航栏全透明 、去除黑线</li>
+<li><strong>导航栏全透明 、去除黑线</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[self.navigationController.navigationBar setBackgroundImage:[UIImage new]</div><div class="line">                                                  forBarMetrics:UIBarMetricsDefault];</div><div class="line">    [self.navigationController.navigationBar setShadowImage:[UIImage new]];</div></pre></td></tr></table></figure>
 <ul>
-<li>获取文字字符数（汉字两个其他1个）</li>
+<li><strong>获取文字字符数（汉字两个其他1个）</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//返回字符个数 汉字两个字符</div><div class="line">- (NSInteger)getStrLength:(NSString*)strtemp &#123;</div><div class="line">    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);</div><div class="line">    NSData* da = [strtemp dataUsingEncoding:enc];</div><div class="line">    return [da length];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
