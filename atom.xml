@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
-  <updated>2017-07-10T08:28:12.000Z</updated>
+  <updated>2017-07-10T08:31:39.000Z</updated>
   <id>http://oxy.pub/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://oxy.pub/2017/06/01/iOSTinyPoint/"/>
     <id>http://oxy.pub/2017/06/01/iOSTinyPoint/</id>
     <published>2017-06-01T07:28:57.000Z</published>
-    <updated>2017-07-10T08:28:12.000Z</updated>
+    <updated>2017-07-10T08:31:39.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><strong>去除空格</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//去除首尾空格：  </div><div class="line">NSString * content = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];</div><div class="line"></div><div class="line">//去除首尾空格和换行：</div><div class="line">NSString *content = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//去除首尾空格：  </div><div class="line">NSString * content = [textView.text stringByTrimmingCharactersInSet:</div><div class="line">                      [NSCharacterSet whitespaceCharacterSet]];</div><div class="line"></div><div class="line">//去除首尾空格和换行：</div><div class="line">NSString *content = [textView.text stringByTrimmingCharactersInSet:</div><div class="line">                     [NSCharacterSet whitespaceAndNewlineCharacterSet]];</div></pre></td></tr></table></figure>
 <ul>
 <li><strong>禁用左侧手势返回功能</strong></li>
 </ul>
