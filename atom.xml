@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
-  <updated>2017-07-10T08:31:39.000Z</updated>
+  <updated>2017-08-14T02:21:29.000Z</updated>
   <id>http://oxy.pub/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://oxy.pub/2017/06/01/iOSTinyPoint/"/>
     <id>http://oxy.pub/2017/06/01/iOSTinyPoint/</id>
     <published>2017-06-01T07:28:57.000Z</published>
-    <updated>2017-07-10T08:31:39.000Z</updated>
+    <updated>2017-08-14T02:21:29.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><strong>去除空格</strong></li>
@@ -70,6 +70,10 @@
 <li><strong>获取文字字符数（汉字两个其他1个）</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//返回字符个数 汉字两个字符</div><div class="line">- (NSInteger)getStrLength:(NSString*)strtemp &#123;</div><div class="line">    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);</div><div class="line">    NSData* da = [strtemp dataUsingEncoding:enc];</div><div class="line">    return [da length];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>判断iPhone尺寸(iPad尺寸是跟随iPhone的)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//这么比较好（可以避免考虑iPad的问题）</div><div class="line">#define iPhone4Size (CGSizeEqualToSize(CGSizeMake(320, 480), [[UIScreen mainScreen] bounds].size))</div><div class="line">#define iPhone5Size (CGSizeEqualToSize(CGSizeMake(320, 568), [[UIScreen mainScreen] bounds].size))</div><div class="line">#define iPhone6Size (CGSizeEqualToSize(CGSizeMake(375, 667), [[UIScreen mainScreen] bounds].size))</div><div class="line">#define iPhone6PlusSize (CGSizeEqualToSize(CGSizeMake(621,1104), [[UIScreen mainScreen] bounds].size))</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
