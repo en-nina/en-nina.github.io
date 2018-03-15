@@ -888,24 +888,4 @@
     
   </entry>
   
-  <entry>
-    <title>iOS面试知识点探究</title>
-    <link href="http://oxy.pub/2014/06/13/oc-point/"/>
-    <id>http://oxy.pub/2014/06/13/oc-point/</id>
-    <published>2014-06-13T03:13:19.000Z</published>
-    <updated>2017-09-13T04:27:50.000Z</updated>
-    
-    <summary type="html">
-    
-      一探究竟
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://oxy.pub/categories/iOS/"/>
-    
-    
-      <category term="Objective-C" scheme="http://oxy.pub/tags/Objective-C/"/>
-    
-  </entry>
-  
 </feed>
