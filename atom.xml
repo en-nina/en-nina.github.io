@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
-  <updated>2017-12-16T02:45:09.000Z</updated>
+  <updated>2017-09-07T04:30:22.000Z</updated>
   <id>http://oxy.pub/</id>
   
   <author>
@@ -14,46 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>php</title>
-    <link href="http://oxy.pub/2017/12/16/php/"/>
-    <id>http://oxy.pub/2017/12/16/php/</id>
-    <published>2017-12-16T02:19:22.000Z</published>
-    <updated>2017-12-16T02:45:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="PHP学习"><a href="#PHP学习" class="headerlink" title="PHP学习"></a>PHP学习</h2><p><strong>LAMP</strong></p>
-<p>L:Linux  A:Apache  M:Mysql P: PHP</p>
-<p><strong>PHP优点</strong></p>
-<ol>
-<li>跨平台  windows  Linux</li>
-<li>开源</li>
-<li>语法简单、上手快</li>
-<li>运行在服务器端</li>
-<li>可以非常快速的开发网站</li>
-</ol>
-<p><strong>环境搭建</strong></p>
-<ol>
-<li><p>Apache安装</p>
-<p>1.1 查看端口号占用情况Apache默认80端  windows 终端命令  netstat -ano</p>
-</li>
-</ol>
-<p><strong>MAC下环境搭建</strong></p>
-<ol>
-<li><a href="http://www.jb51.net/article/113910.htm" target="_blank" rel="external">mac 下自带Apache使用</a></li>
-<li><a href="https://www.cnblogs.com/henusyj-1314/p/6485182.html" target="_blank" rel="external">环境搭建</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;PHP学习&quot;&gt;&lt;a href=&quot;#PHP学习&quot; class=&quot;headerlink&quot; title=&quot;PHP学习&quot;&gt;&lt;/a&gt;PHP学习&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;LAMP&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;L:Linux  A:Apache  M:Mysql P:
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>基于七牛播放器PLPlayer的二次封装(全屏) 以及七牛iOS播放器各个版本的问题</title>
