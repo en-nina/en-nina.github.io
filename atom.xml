@@ -772,15 +772,15 @@
   </entry>
   
   <entry>
-    <title>iOSVideoBlog</title>
+    <title>iOS音视频学习</title>
     <link href="http://oxy.pub/2016/03/15/iOSVideoBlog/"/>
     <id>http://oxy.pub/2016/03/15/iOSVideoBlog/</id>
     <published>2016-03-15T12:50:41.000Z</published>
-    <updated>2018-03-15T13:00:04.000Z</updated>
+    <updated>2018-03-15T13:18:30.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>音视频学习资料整理—–编码篇（VideoToolBox）</strong></p>
 <p>由于项目是直播项目所以闲暇之余需要学习一下音视频编解码相关的知识。</p>
-<p>目前iOS音视频编解码主要有两种编解码框架FFmpeg和苹果原生框架VideoToolBox 自iOS8以后开放，FFmpeg是基于CPU进行编解码的，俗称软编码，而VideoToolBox是基于GPU进行编解码的，俗称硬编码。这里我主要研究的是苹果开放的VideoToolBox。<br>以下是对我学习视频编码做一个整理记录，技巧只有一个就是多看多写，不懂就查：</p>
+<p>目前iOS音视频编解码主要有两种编解码框架FFmpeg和苹果原生框架VideoToolBox 自iOS8以后开放，FFmpeg是基于CPU进行编解码的，俗称软编码，而VideoToolBox是基于GPU进行编解码的，俗称硬编码。这里我主要研究的是苹果开放的VideoToolBox。<br>以下是对我学习视频编码学习博客做一个整理记录，技巧只有一个就是多看多写，不懂就查：</p>
 <ol>
 <li><a href="http://blog.csdn.net/leixiaohua1020/article/details/18893769" target="_blank" rel="external">雷神音视频基础入门</a></li>
 <li><a href="http://blog.csdn.net/leixiaohua1020/article/details/28114081" target="_blank" rel="external">音频与视频基本原理</a></li>
@@ -788,7 +788,14 @@
 <li><a href="http://www.cnblogs.com/yjg2014/p/6127454.html" target="_blank" rel="external">移动直播技术秒开优化经验</a></li>
 <li><a href="http://www.cnblogs.com/Amoyios/p/5832953.html" target="_blank" rel="external">如何快速的开发一个完整的iOS直播app(原理篇)</a></li>
 </ol>
-<p>必须全都看一遍这样对视频编解码有了一个大概的了解，还有对一些关键字的了解<a href="http://blog.csdn.net/xiangjai/article/details/44238005" target="_blank" rel="external"> 码流 / 码率 / 比特率 / 帧速率 / 分辨率 / 高清的区别 </a><br>掌握了一定的基础知识后 就是理论结合实际啦，代码链接地址<a href="https://github.com/loyinglin/LearnVideoToolBox" target="_blank" rel="external">音视频编解码代码</a><br>代码有了，现在就是研究代码了<br>以上都是纯理论只是现在进入真正的代码解析根据博客<br>1.<a href="http://www.jianshu.com/p/37784e363b8a" target="_blank" rel="external">使用VideoToolbox硬编码H.264</a><br>2.<a href="http://www.tuicool.com/articles/22A7na3" target="_blank" rel="external">VideoToolBox基本函数使用</a></p>
+<p>全都看一遍这样对视频编解码有了一个大概的了解</p>
+<p>还有就是对一些关键字的了解<a href="http://blog.csdn.net/xiangjai/article/details/44238005" target="_blank" rel="external"> 码流 / 码率 / 比特率 / 帧速率 / 分辨率 / 高清的区别 </a></p>
+<p>掌握了一定的基础知识后 就是理论结合实际啦，代码链接地址<a href="https://github.com/loyinglin/LearnVideoToolBox" target="_blank" rel="external">音视频编解码代码</a></p>
+<p>以上都是纯理论只是现在进入真正的代码解析根据博客</p>
+<ol>
+<li><a href="http://www.jianshu.com/p/37784e363b8a" target="_blank" rel="external">使用VideoToolbox硬编码H.264</a></li>
+<li><a href="http://www.tuicool.com/articles/22A7na3" target="_blank" rel="external">VideoToolBox基本函数使用</a></li>
+</ol>
 ]]></content>
     
     <summary type="html">
