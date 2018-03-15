@@ -575,11 +575,11 @@
   </entry>
   
   <entry>
-    <title>iOS setStatusBarOrientation 无效的解决方法</title>
+    <title>iOS状态栏旋转问题</title>
     <link href="http://oxy.pub/2016/06/08/autoRotate/"/>
     <id>http://oxy.pub/2016/06/08/autoRotate/</id>
     <published>2016-06-07T17:00:30.000Z</published>
-    <updated>2017-06-09T05:50:19.000Z</updated>
+    <updated>2018-03-15T13:08:22.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>1、window.rootViewController 为VC的时候 下面两种情况改方法仍须在VC中重写</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//控制器中重写</div><div class="line">- (BOOL)shouldAutorotate &#123;</div><div class="line">    return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -593,8 +593,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;1、window.rootViewController 为VC的时候 下面两种情况改方法仍须在VC中重写&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;
+      iOS状态栏无法旋转解决方案
     
     </summary>
     
