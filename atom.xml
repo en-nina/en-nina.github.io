@@ -810,6 +810,85 @@
   </entry>
   
   <entry>
+    <title>CocoaPods安装流程</title>
+    <link href="http://oxy.pub/2016/03/08/CocoaPods/"/>
+    <id>http://oxy.pub/2016/03/08/CocoaPods/</id>
+    <published>2016-03-07T16:00:00.000Z</published>
+    <updated>2018-04-08T09:13:14.669Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>2018-04-08 电脑格式化了重装CocoaPods、更新CocoaPods安装步骤，很多次安装pod setup很慢经以下步骤安装成功切安装速度可以</em></p>
+<h2 id="如何下载和安装CocoaPods？"><a href="#如何下载和安装CocoaPods？" class="headerlink" title="如何下载和安装CocoaPods？"></a>如何下载和安装CocoaPods？</h2><ul>
+<li><h4 id="第一步：安装ruby"><a href="#第一步：安装ruby" class="headerlink" title="第一步：安装ruby"></a>第一步：安装ruby</h4></li>
+</ul>
+<p>不能一上来就换ruby源，虽然mac自带了ruby，但是版本一般比较低，如果不进行更新会导致版本依赖问题。</p>
+<p>这里使用rvm来管理ruby，它允许共存多个ruby。RVM：Ruby Version Manager，Ruby版本管理器，包括Ruby的版本管理和Gem库管理。</p>
+<p>通过以下命令来安装rvm：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ curl -L get.rvm.io | bash -s stable  </div><div class="line">$ source ~/.bashrc  </div><div class="line">$ source ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>完成后就可以通过以下命令来查看rvm是否安装成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm -v</div></pre></td></tr></table></figure>
+<p>然后就可以用rvm来安装或升级Ruby了，首先查看一下Ruby的版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ rvm list known</div><div class="line"># MRI Rubies</div><div class="line">[ruby-]1.8.6[-p420]</div><div class="line">[ruby-]1.8.7[-head] # security released on head</div><div class="line">[ruby-]1.9.1[-p431]</div><div class="line">[ruby-]1.9.2[-p330]</div><div class="line">[ruby-]1.9.3[-p551]</div><div class="line">[ruby-]2.0.0[-p648]</div><div class="line">[ruby-]2.1[.10]</div><div class="line">[ruby-]2.2[.7]</div><div class="line">[ruby-]2.3[.4]</div><div class="line">[ruby-]2.4[.1]</div><div class="line">ruby-head</div></pre></td></tr></table></figure>
+<p>可以看到当前的最新版本，然后通过以下命令来安装它：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm install 2.4</div></pre></td></tr></table></figure>
+<p>安装好后将它设为默认版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm use 2.4 --default</div></pre></td></tr></table></figure>
+<ul>
+<li><h4 id="第二步：更改ruby源"><a href="#第二步：更改ruby源" class="headerlink" title="第二步：更改ruby源"></a>第二步：更改ruby源</h4></li>
+</ul>
+<p>升级好最新的ruby之后就可以更改ruby源了。</p>
+<p>首先移除原有的墙外的源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem sources --remove https://rubygems.org/</div></pre></td></tr></table></figure>
+<p>然后添加目前最新的由ruby官方中国维护的源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem sources -a https://gems.ruby-china.org/</div></pre></td></tr></table></figure>
+<p>然后确保当前只有这么一个源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ gem sources -l</div><div class="line">*** CURRENT SOURCES ***  </div><div class="line"></div><div class="line">https://gems.ruby-china.org/</div></pre></td></tr></table></figure>
+<p>然后进行ruby的组件更新：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gem update --system</div></pre></td></tr></table></figure>
+<p>以上是多数网上比较权威的步骤，如果你跟着弄下来没有问题就没有问题了。</p>
+<p>我跟着做下来的时候在update里一直会报这样一个错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ERROR:  While executing gem ... (OpenSSL::SSL::SSLError)  </div><div class="line">hostname &quot;upyun.gems.ruby-china.org&quot; does not match the server certificate</div></pre></td></tr></table></figure>
+<p>最后各种尝试。用以下方法成功继续下去，如果你也有同样的情况可以尝试以下。<br>先把刚添加的源去掉，在重新添加一个源，把原地址最后的斜杠去掉：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gem sources --remove https://gems.ruby-china.org/  </div><div class="line">gem sources -a https://gems.ruby-china.org</div></pre></td></tr></table></figure>
+<ul>
+<li><h4 id="第三步：安装CocoaPods"><a href="#第三步：安装CocoaPods" class="headerlink" title="第三步：安装CocoaPods"></a>第三步：安装CocoaPods</h4></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo gem install -n /usr/local/bin cocoapods  </div><div class="line">sudo xcode-select --switch /Applications/Xcode.app</div></pre></td></tr></table></figure>
+<p>在终端输入如下命令来完成安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod setup</div></pre></td></tr></table></figure>
+<p>这一步需要些时间，耐心等就是了。<br>如果安装失败，~/.cocoapods里面是空的，就需要重新setup</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pod repo remove master  </div><div class="line">pod setup</div></pre></td></tr></table></figure>
+<p>最后如果出现Setup completed则说明安装完成了。</p>
+<ul>
+<li><h4 id="第四步：创建Podfile"><a href="#第四步：创建Podfile" class="headerlink" title="第四步：创建Podfile"></a>第四步：创建Podfile</h4></li>
+</ul>
+<p>1、新建工程，并cd到工程目录<br>2、新建Podfile文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim Podfile</div></pre></td></tr></table></figure>
+<p>3、按 i （英文输入状态下）进入编辑状态<br>4、输入相应的第三方和版本，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">platform:ios,&apos;8.0&apos;  </div><div class="line">target &apos;你的项目名称&apos; do  </div><div class="line">pod &apos;类库名称&apos;  </div><div class="line">end</div></pre></td></tr></table></figure>
+<p>为了确定第三方开源类库是否支持CocoaPods，可以用CocoaPods的搜索功能验证一下。在终端中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod search 类库名称</div></pre></td></tr></table></figure>
+<p>5、编辑好，先按esc键，再输入:wq（英文输入状态下）保存退出</p>
+<p>6、导入第三方库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod install</div></pre></td></tr></table></figure>
+<p>7、打开后缀为.xcworkspace的工程文件，以后编码也是在此文件中进行操作。</p>
+<p>8、在需要使用第三方库的时候，导入头文件即可，比如：#import <afnetworking.h></afnetworking.h></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;2018-04-08 电脑格式化了重装CocoaPods、更新CocoaPods安装步骤，很多次安装pod setup很慢经以下步骤安装成功切安装速度可以&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;如何下载和安装CocoaPods？&quot;&gt;&lt;a href=&quot;#如何下载和安装Co
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://oxy.pub/categories/iOS/"/>
+    
+    
+      <category term="Objective-C" scheme="http://oxy.pub/tags/Objective-C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>安卓学习复习笔记</title>
     <link href="http://oxy.pub/2015/09/08/AndroidTinyPoint/"/>
     <id>http://oxy.pub/2015/09/08/AndroidTinyPoint/</id>
