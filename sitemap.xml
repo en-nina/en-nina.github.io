@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://oxy.pub/tags/index.html</loc>
-    
-    <lastmod>2018-04-08T17:08:16.268Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://oxy.pub/project/index.html</loc>
     
     <lastmod>2018-04-08T17:08:16.268Z</lastmod>
@@ -16,9 +9,9 @@
   </url>
   
   <url>
-    <loc>http://oxy.pub/about/index.html</loc>
+    <loc>http://oxy.pub/tags/index.html</loc>
     
-    <lastmod>2018-04-08T17:08:16.267Z</lastmod>
+    <lastmod>2018-04-08T17:08:16.268Z</lastmod>
     
   </url>
   
@@ -89,6 +82,13 @@
     <loc>http://oxy.pub/2016/12/11/GithubCode/</loc>
     
     <lastmod>2017-05-23T13:14:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://oxy.pub/about/index.html</loc>
+    
+    <lastmod>2017-04-27T08:37:55.000Z</lastmod>
     
   </url>
   
