@@ -260,14 +260,14 @@ self.titleLabel.attributedText = [self getParagraphText:infModel.title LineSpaci
 }
 ~~~
 
-### 判断iPhone尺寸(iPad尺寸是跟随iPhone的)
+### 判断iPhone尺寸
 
 ~~~objective-c
-//这么比较好（可以避免考虑iPad的问题）
+
 #define iPhone4Size (CGSizeEqualToSize(CGSizeMake(320, 480), [[UIScreen mainScreen] bounds].size))
 #define iPhone5Size (CGSizeEqualToSize(CGSizeMake(320, 568), [[UIScreen mainScreen] bounds].size))
 #define iPhone6Size (CGSizeEqualToSize(CGSizeMake(375, 667), [[UIScreen mainScreen] bounds].size))
-#define iPhone6PlusSize (CGSizeEqualToSize(CGSizeMake(621,1104), [[UIScreen mainScreen] bounds].size))
+#define iPhone6PlusSize (CGSizeEqualToSize(CGSizeMake(414,736), [[UIScreen mainScreen] bounds].size))
 ~~~
 
 ### 直播聊天列表的实现
