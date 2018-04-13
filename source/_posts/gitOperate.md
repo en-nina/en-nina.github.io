@@ -18,12 +18,17 @@ git init
 touch README.md
 
 4. 将改动添加到暂存区
-git add.
+git add .
 
 5. 添加提交说明
 git commit -m ‘版本1’
 
 6. 将本地更改推送到远程分支
+git push -u origin master
+
+7. 在git中重命名远程分支，其实就是先删除远程分支，然后重命名本地分支，再重新提交一个远程分支
+git push --delete origin devel //删除远程分支
+git branch -m oldName newName  //重新命名本地分支
 git push -u origin master
 
 ~~~
@@ -42,6 +47,8 @@ git branch -a 查看本地及远端分支
 git checkout -b master 切换并创建分支
 
 git branch 查看本地分支
+
+git branch -m oldName newName  //重新命名本地分支
 
 ~~~
 
@@ -110,6 +117,7 @@ git remote remove remote_name
 
 git remote set-url remote-name new_url
 
+
 ~~~
 
 
@@ -126,6 +134,7 @@ git remote add origin http://192.168.1.134/zhouen/test.git
 git push -u origin --all
 
 git push -u origin --tags
+
 
 ~~~
 
