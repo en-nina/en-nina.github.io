@@ -109,7 +109,7 @@ git push -u origin master
 
 git add .   添加变化的内容包括新文件但不包括被删除的文件 到暂存区域
 
-git add —all   添加变化的内容包括新文件同时包括删除的文件 到暂存区域
+git add -A   添加变化的内容包括新文件同时包括删除的文件 到暂存区域
 
 git remote -v
 
@@ -139,4 +139,22 @@ git push -u origin --tags
 ~~~
 
 
+
+------
+
+**Ignore the file**
+
+```shell
+touch .gitignore
+
+//例：iOS过滤第三方库文件 修改.gitignore 文件加入一下文本
+.DS_Store
+*.xcworkspace
+xcuserdata
+*.lock
+Pods
+
+//进入目录删除已经存在的git (有的文件中已经存在git导致无法提交)
+rm -rf .git
+```
 
