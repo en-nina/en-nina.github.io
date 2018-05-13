@@ -158,3 +158,19 @@ Pods
 rm -rf .git
 ```
 
+
+
+------
+
+**Problems and Solutions**
+
+1. git push -u origin master 遇到错误The requested URL returned error: 403 Forbidden while accessing
+
+```shell
+解决方案：vim .git/config
+修改URL： url = https://github.com/enamor/PageControl.git
+修改后：  url = https://enamor@github.com/enamor/PageControl.git
+
+之后 再次git push，弹出框输入密码，即可提交
+```
+
