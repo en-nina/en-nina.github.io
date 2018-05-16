@@ -10,6 +10,8 @@ tags:
 
 Mac系统对于PHP运行非常友好,我们只需要进行简单的配置便可以开始进行使用,本篇文章将一步一步地介绍Apache、PHP和MySQL的安装与配置,为开始进行开发铺好路
 
+*操作系统：Mac OS	数据库：mysql8.0.11  PHP7.1.14*
+
 # Apache
 
 ### 启动Apache服务
@@ -264,3 +266,131 @@ http://localhost/phpmyadmin/
 最终登录成功界面如下：
 
 ![](macPHPConfig/phpMyAdmin_success.png)
+
+
+
+---
+
+
+
+### PHP时间配置
+
+*以下为系统自带PHP时间的配置*
+
+->finder 右键前往文件夹 /private/etc/ 找到php.ini.default 文件拷贝并重命名为 php.ini 打开修改如下
+
+~~~
+#原先
+;date.timezone
+
+#修改后
+date.timezone = PRC
+~~~
+
+重启Apache之后时间即为正确时间
+
+
+
+###配置PHP以执行mysql函数
+
+*本文mysql7.2*
+
+php作为一门语言，其中也有很多个“模块”，mysql只是其中一个！！！
+
+我们首先得配置mysql模块使之生效，做法如下：
+
+1. mac系统自带PHP
+
+~~~
+#在 /etc 下拷贝php.ini.default 并重命名为 php.ini
+~~~
+
+
+
+*以下两项操作小编都没有操作测试mysqli_connect方法链接数据库成功*
+
+2. 在php.ini文件中，指定mysql模块的位置（实际上，php中的模块，都放在该一个位置）：
+
+![](macPHPConfig/PHP_extension_dir.png)
+
+3. 在php.ini文件中，“打开”想要的模块（我们现在需要mysql模块 extension=php_pdo_mysql.dll)：(本人mac下没有打开也可以链接mysql成功)
+
+![](macPHPConfig/mysql_module.png)
+
+
+
+~~~php
+#测试
+<?php 
+echo date('y-m-d h:i:s');
+
+$host = "127.0.0.1";
+$user = "root";
+$pass = "11111111";
+$link=mysqli_connect($host,$user,$pass) or die(mysql_error());
+if (!$link) {     
+   printf("Can't connect to MySQL Server. Errorcode: %s ", mysqli_connect_error());     
+} else{
+   echo "sucess";
+}
+?>
+~~~
+
+
+
+---
+
+
+
+### Apache多站点配置
+
+1. 在apache的主配置文件(conf/httpd.conf）中，“打开”虚拟主机配置文件——其实就是引入
+
+   ~~~shell
+   #终端命令打开httpd.conf
+   open /etc/apache2/httpd.conf
+
+   #找到如下配置去掉 Include前#
+   # Virtual hosts
+   Include /private/etc/apache2/extra/httpd-vhosts.conf
+   open /etc/apache2/extra/httpd-vhosts.conf
+   ~~~
+
+2. 打开该虚拟主机配置文件（/etc/apache2/extra/httpd-vhosts.conf），并“一个一个站点配置”
+
+~~~coffeescript
+#打开该虚拟主机配置文件
+open /etc/apache2/extra/httpd-vhosts.conf
+
+#站点配置如下
+<VirtualHost *:80>
+     	ServerName localhost 
+	DocumentRoot "/Users/zhouen/PHPServer"
+	<Directory "/Users/zhouen/PHPServer">
+   		 Options FollowSymLinks Multiviews
+   	 	MultiviewsMatch Any
+   		 AllowOverride All
+   		 Require all granted
+
+		#单独配置主页面
+		DirectoryIndex index.php index.html
+	</Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+     	ServerName oxyxx.com
+	DocumentRoot "/Users/zhouen/PHPServer2"
+	<Directory "/Users/zhouen/PHPServer2">
+   		 Options FollowSymLinks Multiviews
+   	 	MultiviewsMatch Any
+   		 AllowOverride All
+   		 Require all granted
+
+		#单独配置主页面
+		DirectoryIndex index.php index.html
+	</Directory>
+</VirtualHost>
+
+~~~
+
+重启Apache 后生效
