@@ -320,3 +320,29 @@ self.titleLabel.attributedText = [self getParagraphText:infModel.title LineSpaci
 
 ~~~
 
+### 全屏幕拖动返回简单实现
+
+~~~objective-c
+BaseNavigationController<UIGestureRecognizerDelegate>
+//viewDidLoad中添加如下代码
+id target = self.interactivePopGestureRecognizer.delegate;
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
+    [self.view addGestureRecognizer:pan];
+    self.interactivePopGestureRecognizer.enabled = NO;
+~~~
+
+### 导航栏隐藏显示
+
+~~~objective-c
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillDisappear:animated];
+    
+}
+~~~
+

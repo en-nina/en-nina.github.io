@@ -280,7 +280,10 @@ http://localhost/phpmyadmin/
 ->finder 右键前往文件夹 /private/etc/ 找到php.ini.default 文件拷贝并重命名为 php.ini 打开修改如下
 
 ~~~
-#原先
+#1. 如果使用自己安装的PHP需要在apache的配置文件(httpd.conf）中指定php.ini的路径
+PHPIniDir "/User/xxx/xxx/xx/php"
+
+#2. 修改php.ini里面原先
 ;date.timezone
 
 #修改后
