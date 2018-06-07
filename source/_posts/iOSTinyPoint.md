@@ -346,3 +346,17 @@ id target = self.interactivePopGestureRecognizer.delegate;
 }
 ~~~
 
+### iOS TableView reloadData闪动的问题
+
+~~~objective-c
+解决方法：
+
+//在iOS 11 Self-Sizing自动打开后，contentSize和contentOffset都可能发生改变。可以通过以下方式禁用
+
+self.estimatedRowHeight = 0;
+self.estimatedSectionHeaderHeight = 0;
+self.estimatedSectionFooterHeight = 0;
+~~~
+
+
+
