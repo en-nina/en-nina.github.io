@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
-  <updated>2018-06-28T03:12:12.603Z</updated>
+  <updated>2018-06-28T03:15:36.588Z</updated>
   <id>http://oxy.pub/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://oxy.pub/2018/06/28/PhpStorm-codeStyle/"/>
     <id>http://oxy.pub/2018/06/28/PhpStorm-codeStyle/</id>
     <published>2018-06-28T02:31:48.091Z</published>
-    <updated>2018-06-28T03:12:12.603Z</updated>
+    <updated>2018-06-28T03:15:36.588Z</updated>
     
-    <content type="html"><![CDATA[<p>####概述</p><p> PHPstorm默认的是黄色的主题小编灰常不喜欢所以才有了以下替换自己喜欢主题的文章</p><p>以下为Mac系统操作如下</p><h5 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h5><p>去下载自己喜欢的主题：<a href="http://www.phpstorm-themes.com/" target="_blank" rel="noopener">http://www.phpstorm-themes.com/</a>  如下图：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step1.png" alt=""></p><p>谷歌浏览器默认会直接在浏览器打开不会去下载直接存储为xx.icls文件即可</p><h5 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h5><p>根据上面网站帮助介绍把下载的文件放入对应的路径中去</p><p>小编~/Library/Preferences/PhpStorm2018.1 目录下没有colors文件夹 手动创建后放入文件</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step2.png" alt=""></p><h5 id="第三部"><a href="#第三部" class="headerlink" title="第三部"></a>第三部</h5><p>右上角PhpStorm -&gt; preferences -&gt; Color Scheme -&gt; Scheme 下选择新添加的vs</p><p>操作如下：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step3.png" alt=""></p><p>设置apply OK 后会出现如下情况：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step4.png" alt=""></p><p>接着操作Color Scheme -&gt; Language Defaults -&gt; Template language  去除background的勾选</p><p>操作如下：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step5.png" alt=""></p><p>最终效果如下：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step6.png" alt=""></p><h5 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h5><p>至于为啥不是操作Code Style (<em>PhpStorm -&gt; preferences -&gt; Code Style -&gt; Scheme</em>) 的 Scheme 这个就不是小编的问题了</p>]]></content>
+    <content type="html"><![CDATA[<p>####概述</p><p> PHPstorm默认的屎黄色的主题小编灰常不喜欢所以才有了以下替换自己喜欢主题的文章</p><p>以下为Mac系统操作如下</p><h5 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h5><p>去下载自己喜欢的主题：<a href="http://www.phpstorm-themes.com/" target="_blank" rel="noopener">http://www.phpstorm-themes.com/</a>  如下图：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step1.png" alt=""></p><p>谷歌浏览器默认会直接在浏览器打开不会去下载直接存储为xx.icls文件即可</p><h5 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h5><p>根据上面网站帮助介绍把下载的文件放入对应的路径中去</p><p>小编~/Library/Preferences/PhpStorm2018.1 目录下没有colors文件夹 手动创建后放入文件</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step2.png" alt=""></p><h5 id="第三部"><a href="#第三部" class="headerlink" title="第三部"></a>第三部</h5><p>右上角PhpStorm -&gt; preferences -&gt; Color Scheme -&gt; Scheme 下选择新添加的vs</p><p>操作如下：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step3.png" alt=""></p><p>设置apply OK 后会出现如下情况：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step4.png" alt=""></p><p>接着操作Color Scheme -&gt; Language Defaults -&gt; Template language  去除background的勾选</p><p>操作如下：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step5.png" alt=""></p><p>最终效果如下：</p><p><img src="/2018/06/28/PhpStorm-codeStyle/step6.png" alt=""></p><h5 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h5><p>至于为啥不是操作Code Style (<em>PhpStorm -&gt; preferences -&gt; Code Style -&gt; Scheme</em>) 的 Scheme 这个就不是小编的问题了</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;####概述&lt;/p&gt;
-&lt;p&gt; PHPstorm默认的是黄色的主题小编灰常不喜欢所以才有了以下替换自己喜欢主题的文章&lt;/p&gt;
+&lt;p&gt; PHPstorm默认的屎黄色的主题小编灰常不喜欢所以才有了以下替换自己喜欢主题的文章&lt;/p&gt;
 &lt;p&gt;以下为Mac系统操作如下&lt;/p&gt;
 &lt;h5 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第
       
