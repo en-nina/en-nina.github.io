@@ -386,5 +386,16 @@ tap.delegate = self;
 }
 ~~~
 
+### presentViewController后view 透明效果设置
+
+~~~objective-c
+if ([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
+    VC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+}else{
+    VC.modalPresentationStyle = UIModalPresentationCurrentContext;
+}
+[controller presentViewController:vC animated:NO completion:nil];
+~~~
+
 
 
