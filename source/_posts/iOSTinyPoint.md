@@ -358,5 +358,33 @@ self.estimatedSectionHeaderHeight = 0;
 self.estimatedSectionFooterHeight = 0;
 ~~~
 
+### 避免父view视图手势影响
+
+~~~objective-c
+//设置手势代理
+tap.delegate = self;
+
+//实现代理方法
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isDescendantOfView:self.alertView]) {
+        return NO;
+    }
+    return YES;
+}
+~~~
+
+### Scrollview嵌套 tableview
+
+~~~objective-c
+//scrollview contentSize的处理
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self.scrollView layoutIfNeeded];
+    [self.view layoutIfNeeded];
+    self.scrollView.contentSize = CGSizeMake(0, self.rewardView.bottom + 80 * 5 + 100 +20);
+}
+~~~
+
 
 
