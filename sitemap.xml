@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://oxy.pub/2018/10/17/vuejs1/</loc>
+    
+    <lastmod>2018-10-17T03:18:43.598Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://oxy.pub/2018/10/12/uipage/</loc>
     
-    <lastmod>2018-10-12T04:22:57.814Z</lastmod>
+    <lastmod>2018-10-12T09:26:25.052Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://oxy.pub/2018/01/09/gitOperate/</loc>
+    
+    <lastmod>2018-10-12T04:24:28.766Z</lastmod>
     
   </url>
   
@@ -37,21 +51,14 @@
   </url>
   
   <url>
-    <loc>http://oxy.pub/2018/01/09/gitOperate/</loc>
-    
-    <lastmod>2018-05-13T09:52:39.702Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://oxy.pub/project/index.html</loc>
+    <loc>http://oxy.pub/tags/index.html</loc>
     
     <lastmod>2018-04-08T17:08:16.268Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://oxy.pub/tags/index.html</loc>
+    <loc>http://oxy.pub/project/index.html</loc>
     
     <lastmod>2018-04-08T17:08:16.268Z</lastmod>
     
