@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
-  <updated>2018-10-17T03:18:43.598Z</updated>
+  <updated>2018-10-19T06:56:31.195Z</updated>
   <id>http://oxy.pub/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iphoneX系列适配用的宏定义</title>
+    <link href="http://oxy.pub/2018/10/19/iphoneXseries/"/>
+    <id>http://oxy.pub/2018/10/19/iphoneXseries/</id>
+    <published>2018-10-19T01:58:26.000Z</published>
+    <updated>2018-10-19T06:56:31.195Z</updated>
+    
+    <content type="html"><![CDATA[<p>去年适配的iPhoneX 的分辨率：2436 <em> 1125     ||     pt: 812 </em> 375<br>iPhoneXr的分辨率：1792 <em> 828     ||    pt:  896 </em> 414<br>iPhoneXs 的分辨率： 2436 <em> 1125   ||   pt: 812 </em> 375<br>iPhoneXs Max 的分辨率：2688 <em> 1242   ||    pt: 896 </em> 414</p><p>导航栏和tabBar的高度是一样的，所以需要在原来判断iPhoneX的基础上增加两种机型.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//判断是否是ipad</span><br><span class="line">#define isPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)</span><br><span class="line">//判断iPhone4系列</span><br><span class="line">#define kiPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) &amp;&amp; !isPad : NO)</span><br><span class="line">//判断iPhone5系列</span><br><span class="line">#define kiPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) &amp;&amp; !isPad : NO)</span><br><span class="line">//判断iPhone6系列</span><br><span class="line">#define kiPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) &amp;&amp; !isPad : NO)</span><br><span class="line">//判断iphone6+系列</span><br><span class="line">#define kiPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) &amp;&amp; !isPad : NO)</span><br><span class="line">//判断iPhoneX</span><br><span class="line">#define IS_IPHONE_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) &amp;&amp; !isPad : NO)</span><br><span class="line">//判断iPHoneXr</span><br><span class="line">#define IS_IPHONE_Xr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) &amp;&amp; !isPad : NO)</span><br><span class="line">//判断iPhoneXs</span><br><span class="line">#define IS_IPHONE_Xs ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) &amp;&amp; !isPad : NO)</span><br><span class="line">//判断iPhoneXs Max</span><br><span class="line">#define IS_IPHONE_Xs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) &amp;&amp; !isPad : NO)</span><br></pre></td></tr></table></figure><p>navBar和tabBar的判断</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//iPhoneX系列</span><br><span class="line">#define Height_StatusBar ((IS_IPHONE_X==YES || IS_IPHONE_Xr ==YES || IS_IPHONE_Xs== YES || IS_IPHONE_Xs_Max== YES) ? 44.0 : 20.0)</span><br><span class="line">#define Height_NavBar ((IS_IPHONE_X==YES || IS_IPHONE_Xr ==YES || IS_IPHONE_Xs== YES || IS_IPHONE_Xs_Max== YES) ? 88.0 : 64.0)</span><br><span class="line">#define Height_TabBar ((IS_IPHONE_X==YES || IS_IPHONE_Xr ==YES || IS_IPHONE_Xs== YES || IS_IPHONE_Xs_Max== YES) ? 83.0 : 49.0)</span><br></pre></td></tr></table></figure><p>横屏状态下还有变化</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#define CC_IsPortrait ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortrait || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortraitUpsideDown)</span><br><span class="line"></span><br><span class="line">//iphonex 安全区域</span><br><span class="line">#define CC_SafeEdgeInsets  (CC_IsPortrait ? UIEdgeInsetsMake(44, 0, 34, 0) : UIEdgeInsetsMake(0, 44, 21, 44))</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;去年适配的iPhoneX 的分辨率：2436 &lt;em&gt; 1125     ||     pt: 812 &lt;/em&gt; 375&lt;br&gt;iPhoneXr的分辨率：1792 &lt;em&gt; 828     ||    pt:  896 &lt;/em&gt; 414&lt;br&gt;iPhoneXs 的分辨率
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://oxy.pub/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://oxy.pub/tags/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title>在vuejs 中使用axios不能获取属性data的解决方法</title>
