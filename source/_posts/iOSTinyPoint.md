@@ -425,3 +425,27 @@ if ([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
 
 
 
+### UIScrollview 和 slider手势冲突
+
+~~~
+/**UIScrollview 内部包含 slider引起的手势冲突 重写scrollview 继承自UIScrollview 重写下面方法
+	参考https://blog.csdn.net/findhappy117/article/details/82781071
+*/
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    /*
+     直接拖动UISlider，此时touch时间在150ms以内，UIScrollView会认为是拖动自己，从而拦截了event，导致UISlider接受不到滑动的event。但是只要按住UISlider一会再拖动，此时此时touch时间超过150ms，因此滑动的event会发送到UISlider上。
+     */
+    UIView *view = [super hitTest:point withEvent:event];
+    
+    if([view isKindOfClass:[UISlider class]]) {
+        //如果接收事件view是UISlider,则scrollview禁止响应滑动
+        self.scrollEnabled = NO;
+    } else {   //如果不是,则恢复滑动
+        self.scrollEnabled = YES;
+    }
+    return view;
+}
+~~~
+
+
+

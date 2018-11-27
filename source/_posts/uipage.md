@@ -12,8 +12,14 @@ tags:
 
 **上下滑动引起页面重复的bug**
 
+*开始时的思路：修改UIPageViewController的UIPanGestureRecognizer手势*
+
+以下方案引发了以下bug
+
+*The number of view controllers provided (0) doesn't match the number required (2) for the requested transition*
+
 ~~~objective-c
-解决方案：修改UIPageViewController的UIPanGestureRecognizer手势
+解决方案开始思路：修改UIPageViewController的UIPanGestureRecognizer手势
 
 //1 修改UIPageViewController的UIPanGestureRecognizer手势代理
     for (UIGestureRecognizer *gr in _pageViewController.gestureRecognizers) {
@@ -77,6 +83,29 @@ tags:
     
     return YES;
     
+}
+~~~
+
+**解决方案二**
+
+~~~objective-c
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    //此处会修正为正确的index
+    NSUInteger index = [self indexOfViewController:(ContentViewController *)viewController];
+    if (index == NSNotFound) {
+        return nil;
+    }
+    index++;
+    if (index == [self.pageContentArray count]) {
+        return nil;
+    }
+    return [self viewControllerAtIndex:index];
+    
+    
+}
+
+- (NSUInteger)indexOfViewController:(ContentViewController *)viewController {
+    return [self.pageContentArray indexOfObject:viewController.content];
 }
 ~~~
 
