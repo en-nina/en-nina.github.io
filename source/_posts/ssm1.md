@@ -40,9 +40,9 @@ description: intellij + Cradle 搭建 web工程
 
 *Gradle手动安装方式 通过sdkman*
 
-*1.sdkman安装<http:/sdkman.io/install.html>*
+*1.sdkman安装<https:/sdkman.io/install.html>*
 
-*2.安装cradle <https:/gradle.org/install>  只需执行 $ sdk install gradle 3.5*
+*2.安装gradle <https:/gradle.org/install>  只需执行 $ sdk install gradle 3.5*
 
 
 

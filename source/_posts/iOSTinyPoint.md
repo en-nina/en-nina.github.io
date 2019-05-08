@@ -449,3 +449,20 @@ if ([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
 
 
 
+### 获取当前正在展示的控制器###
+
+~~~
+	//UITabBarController + UINavigationController
+	UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    UIViewController *vc = window.rootViewController;
+    
+    UIViewController *result = nil;
+    if ([vc isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabbar = (UITabBarController *)vc;
+        result = [tabbar selectedViewController];  //UINavigationController
+        result = [result.childViewControllers lastObject];//UINavigationController所嵌套的控制器
+    }
+~~~
+
+
+
