@@ -1,4 +1,217 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>安卓学习复习笔记 | O₂</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/6.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">安卓学习复习笔记</h1><a id="logo" href="/.">O₂</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">安卓学习复习笔记</h1><div class="post-meta">Sep 8, 2015<span> | </span><span class="category"><a href="/categories/Android/">Android</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="clear"><div id="toc" class="toc-article"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#进入应用程序主界面"><span class="toc-number">1.</span> <span class="toc-text">进入应用程序主界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取版本号版本名称"><span class="toc-number">2.</span> <span class="toc-text">获取版本号版本名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统弹窗的使用"><span class="toc-number">3.</span> <span class="toc-text">系统弹窗的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断sd卡是否可用，是否挂载上及SD卡路径"><span class="toc-number">4.</span> <span class="toc-text">判断sd卡是否可用，是否挂载上及SD卡路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新安装apk代码"><span class="toc-number">5.</span> <span class="toc-text">更新安装apk代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取SIM卡序列号"><span class="toc-number">6.</span> <span class="toc-text">获取SIM卡序列号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取联系人列表"><span class="toc-number">7.</span> <span class="toc-text">获取联系人列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移入移出动画"><span class="toc-number">8.</span> <span class="toc-text">移入移出动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片选择器（普通、高亮）"><span class="toc-number">9.</span> <span class="toc-text">图片选择器（普通、高亮）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义控件属性的添加"><span class="toc-number">10.</span> <span class="toc-text">自定义控件属性的添加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取可用空间的大小"><span class="toc-number">11.</span> <span class="toc-text">获取可用空间的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载应用"><span class="toc-number">12.</span> <span class="toc-text">卸载应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开启应用"><span class="toc-number">13.</span> <span class="toc-text">开启应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送短信"><span class="toc-number">14.</span> <span class="toc-text">发送短信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动画集合（缩放，透明）"><span class="toc-number">15.</span> <span class="toc-text">动画集合（缩放，透明）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ListView的使用（复用）"><span class="toc-number">16.</span> <span class="toc-text">ListView的使用（复用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码更改布局位置处理"><span class="toc-number">17.</span> <span class="toc-text">代码更改布局位置处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取系统联系人"><span class="toc-number">18.</span> <span class="toc-text">获取系统联系人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基类手势控制-上一页下一页"><span class="toc-number">19.</span> <span class="toc-text">基类手势控制 上一页下一页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手机震动"><span class="toc-number">20.</span> <span class="toc-text">手机震动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#播放声音"><span class="toc-number">21.</span> <span class="toc-text">播放声音</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本抖动效果"><span class="toc-number">22.</span> <span class="toc-text">文本抖动效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取手机所有应用相关信息"><span class="toc-number">23.</span> <span class="toc-text">获取手机所有应用相关信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九宫格GridView"><span class="toc-number">24.</span> <span class="toc-text">九宫格GridView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取空间内存（运存）大小"><span class="toc-number">25.</span> <span class="toc-text">获取空间内存（运存）大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断服务是否开启"><span class="toc-number">26.</span> <span class="toc-text">判断服务是否开启</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多击事件"><span class="toc-number">27.</span> <span class="toc-text">多击事件</span></a></li></ol></div></div><div class="post-content"><h3 id="进入应用程序主界面"><a href="#进入应用程序主界面" class="headerlink" title="进入应用程序主界面"></a>进入应用程序主界面</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 进入应用程序主界面</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">enterHome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>,HomeActivity.class);</span><br><span class="line">	startActivity(intent);</span><br><span class="line">	<span class="comment">//在开启一个新的界面后,将导航界面关闭(导航界面只可见一次)</span></span><br><span class="line">	finish();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          安卓学习复习笔记 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://oxy.pub/2015/09/08/AndroidTinyPoint/">
+
+    <!-- Bootstrap Core CSS -->
+
+   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+    
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+	<link rel="stylesheet" href="/css/w3.css">
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+    }
+   .post-heading{
+    padding:20px;
+    }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+</style>
+
+<header id="headerid" class="w3-indigo intro-header" style="position:relative;">
+    <!-- Signature -->
+	
+        <div class="container">
+            <div class=" row" >
+			
+			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
+			
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
+                
+                    <div class="post-heading" style="padding:40px">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Android" title="Android">Android</a>
+                            
+                        </div>
+                        <h1>安卓学习复习笔记</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by nina on
+                            2015-09-08
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+  
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">O₂</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a  href="/">主页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h3 id="进入应用程序主界面"><a href="#进入应用程序主界面" class="headerlink" title="进入应用程序主界面"></a>进入应用程序主界面</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 进入应用程序主界面</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">enterHome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>,HomeActivity.class);</span><br><span class="line">	startActivity(intent);</span><br><span class="line">	<span class="comment">//在开启一个新的界面后,将导航界面关闭(导航界面只可见一次)</span></span><br><span class="line">	finish();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="获取版本号版本名称"><a href="#获取版本号版本名称" class="headerlink" title="获取版本号版本名称"></a>获取版本号版本名称</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 返回版本号</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span>	</span></span><br><span class="line"><span class="comment">	 * 			非0 则代表获取成功</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getVersionCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//1,包管理者对象packageManager</span></span><br><span class="line">		PackageManager pm = getPackageManager();</span><br><span class="line">		<span class="comment">//2,从包的管理者对象中,获取指定包名的基本信息(版本名称,版本号),传0代表获取基本信息</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			PackageInfo packageInfo = pm.getPackageInfo(getPackageName(), <span class="number">0</span>);</span><br><span class="line">			<span class="comment">//3,获取版本名称</span></span><br><span class="line">			<span class="keyword">return</span> packageInfo.versionCode;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 获取版本名称:清单文件中</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span>	应用版本名称	返回null代表异常</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> String <span class="title">getVersionName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//1,包管理者对象packageManager</span></span><br><span class="line">		PackageManager pm = getPackageManager();</span><br><span class="line">		<span class="comment">//2,从包的管理者对象中,获取指定包名的基本信息(版本名称,版本号),传0代表获取基本信息</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			PackageInfo packageInfo = pm.getPackageInfo(getPackageName(), <span class="number">0</span>);</span><br><span class="line">			<span class="comment">//3,获取版本名称</span></span><br><span class="line">			<span class="keyword">return</span> packageInfo.versionName;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="系统弹窗的使用"><a href="#系统弹窗的使用" class="headerlink" title="系统弹窗的使用"></a>系统弹窗的使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 弹出对话框,提示用户更新</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">showUpdateDialog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//对话框,是依赖于activity存在的</span></span><br><span class="line">		Builder builder = <span class="keyword">new</span> AlertDialog.Builder(<span class="keyword">this</span>);</span><br><span class="line">		<span class="comment">//设置左上角图标</span></span><br><span class="line">		builder.setIcon(R.drawable.ic_launcher);</span><br><span class="line">		builder.setTitle(<span class="string">"版本更新"</span>);</span><br><span class="line">		<span class="comment">//设置描述内容</span></span><br><span class="line">		builder.setMessage(mVersionDes);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//积极按钮,立即更新</span></span><br><span class="line">		builder.setPositiveButton(<span class="string">"立即更新"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</span><br><span class="line">				<span class="comment">//下载apk,apk链接地址,downloadUrl</span></span><br><span class="line">				downloadApk();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		</span><br><span class="line">		builder.setNegativeButton(<span class="string">"稍后再说"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</span><br><span class="line">				<span class="comment">//取消对话框,进入主界面</span></span><br><span class="line">				enterHome();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//点击取消事件监听</span></span><br><span class="line">		builder.setOnCancelListener(<span class="keyword">new</span> DialogInterface.OnCancelListener() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCancel</span><span class="params">(DialogInterface dialog)</span> </span>&#123;</span><br><span class="line">				<span class="comment">//即使用户点击取消,也需要让其进入应用程序主界面</span></span><br><span class="line">				enterHome();</span><br><span class="line">				dialog.dismiss();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		</span><br><span class="line">		builder.show();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="判断sd卡是否可用，是否挂载上及SD卡路径"><a href="#判断sd卡是否可用，是否挂载上及SD卡路径" class="headerlink" title="判断sd卡是否可用，是否挂载上及SD卡路径"></a>判断sd卡是否可用，是否挂载上及SD卡路径</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1,判断sd卡是否可用,是否挂在上</span></span><br><span class="line">		<span class="keyword">if</span>(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))&#123;</span><br><span class="line">			<span class="comment">//2,获取sd路径</span></span><br><span class="line">			String path = 			Environment.getExternalStorageDirectory().getAbsolutePath()</span><br><span class="line">					+File.separator+<span class="string">"xxx.apk"</span>;</span><br><span class="line">					&#125;</span><br></pre></td></tr></table></figure>
@@ -27,4 +240,302 @@
 <h3 id="获取空间内存（运存）大小"><a href="#获取空间内存（运存）大小" class="headerlink" title="获取空间内存（运存）大小"></a>获取空间内存（运存）大小</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> ctx  </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 返回可用的内存数    bytes</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">getAvailSpace</span><span class="params">(Context ctx)</span></span>&#123;</span><br><span class="line">   <span class="comment">//1,获取activityManager</span></span><br><span class="line">   ActivityManager am = (ActivityManager) ctx.getSystemService(Context.ACTIVITY_SERVICE);</span><br><span class="line">   <span class="comment">//2,构建存储可用内存的对象</span></span><br><span class="line">   MemoryInfo memoryInfo = <span class="keyword">new</span> MemoryInfo();</span><br><span class="line">   <span class="comment">//3,给memoryInfo对象赋(可用内存)值</span></span><br><span class="line">   am.getMemoryInfo(memoryInfo);</span><br><span class="line">   <span class="comment">//4,获取memoryInfo中相应可用内存大小</span></span><br><span class="line">   <span class="keyword">return</span> memoryInfo.availMem;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> ctx  </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 返回总的内存数 单位为bytes 返回0说明异常</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">getTotalSpace</span><span class="params">(Context ctx)</span></span>&#123;</span><br><span class="line">   <span class="comment">/*//1,获取activityManager</span></span><br><span class="line"><span class="comment">   ActivityManager am = (ActivityManager) ctx.getSystemService(Context.ACTIVITY_SERVICE);</span></span><br><span class="line"><span class="comment">   //2,构建存储可用内存的对象</span></span><br><span class="line"><span class="comment">   MemoryInfo memoryInfo = new MemoryInfo();</span></span><br><span class="line"><span class="comment">   //3,给memoryInfo对象赋(可用内存)值</span></span><br><span class="line"><span class="comment">   am.getMemoryInfo(memoryInfo);</span></span><br><span class="line"><span class="comment">   //4,获取memoryInfo中相应可用内存大小</span></span><br><span class="line"><span class="comment">   return memoryInfo.totalMem;*/</span></span><br><span class="line">   </span><br><span class="line">   <span class="comment">//内存大小写入文件中,读取proc/meminfo文件,读取第一行,获取数字字符,转换成bytes返回</span></span><br><span class="line">   FileReader fileReader  = <span class="keyword">null</span>;</span><br><span class="line">   BufferedReader bufferedReader = <span class="keyword">null</span>;</span><br><span class="line">   <span class="keyword">try</span> &#123;</span><br><span class="line">      fileReader= <span class="keyword">new</span> FileReader(<span class="string">"proc/meminfo"</span>);</span><br><span class="line">      bufferedReader = <span class="keyword">new</span> BufferedReader(fileReader);</span><br><span class="line">      String lineOne = bufferedReader.readLine();</span><br><span class="line">      <span class="comment">//将字符串转换成字符的数组</span></span><br><span class="line">      <span class="keyword">char</span>[] charArray = lineOne.toCharArray();</span><br><span class="line">      <span class="comment">//循环遍历每一个字符,如果此字符的ASCII码在0到9的区域内,说明此字符有效</span></span><br><span class="line">      StringBuffer stringBuffer = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">char</span> c : charArray) &#123;</span><br><span class="line">         <span class="keyword">if</span>(c&gt;=<span class="string">'0'</span> &amp;&amp; c&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">            stringBuffer.append(c);</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> Long.parseLong(stringBuffer.toString())*<span class="number">1024</span>;</span><br><span class="line">   &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">   &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">         <span class="keyword">if</span>(fileReader!=<span class="keyword">null</span> &amp;&amp; bufferedReader!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            fileReader.close();</span><br><span class="line">            bufferedReader.close();</span><br><span class="line">         &#125;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">         e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="判断服务是否开启"><a href="#判断服务是否开启" class="headerlink" title="判断服务是否开启"></a>判断服务是否开启</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> ctx  上下文环境</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> serviceName 判断是否正在运行的服务</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> true 运行 false 没有运行</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isRunning</span><span class="params">(Context ctx,String serviceName)</span></span>&#123;</span><br><span class="line">   <span class="comment">//1,获取activityMananger管理者对象,可以去获取当前手机正在运行的所有服务</span></span><br><span class="line">   ActivityManager mAM = (ActivityManager) ctx.getSystemService(Context.ACTIVITY_SERVICE);</span><br><span class="line">   <span class="comment">//2,获取手机中正在运行的服务集合(多少个服务)</span></span><br><span class="line">   List&lt;RunningServiceInfo&gt; runningServices = mAM.getRunningServices(<span class="number">1000</span>);</span><br><span class="line">   <span class="comment">//3,遍历获取的所有的服务集合,拿到每一个服务的类的名称,和传递进来的类的名称作比对,如果一致,说明服务正在运行</span></span><br><span class="line">   <span class="keyword">for</span> (RunningServiceInfo runningServiceInfo : runningServices) &#123;</span><br><span class="line">      Log.i(tag, <span class="string">"runningServiceInfo.service.getClassName() = "</span>+runningServiceInfo.service.getClassName());</span><br><span class="line">      <span class="comment">//4,获取每一个真正运行服务的名称</span></span><br><span class="line">      <span class="keyword">if</span>(serviceName.equals(runningServiceInfo.service.getClassName()))&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="多击事件"><a href="#多击事件" class="headerlink" title="多击事件"></a>多击事件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span>[] mHits = <span class="keyword">new</span> <span class="keyword">long</span>[<span class="number">3</span>];<span class="comment">//数组长度为点击次数</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 多次点击</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> view</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//		src 源数组</span></span><br><span class="line">	<span class="comment">//		srcPos 开始拷贝的位置</span></span><br><span class="line">	<span class="comment">//		dst 目标数组</span></span><br><span class="line">	<span class="comment">//		dstPos 目标数组的起始拷贝位置</span></span><br><span class="line">	<span class="comment">//		length 拷贝的数组长度</span></span><br><span class="line">	System.arraycopy(mHits, <span class="number">1</span>, mHits, <span class="number">0</span>, mHits.length - <span class="number">1</span>);<span class="comment">//拷贝数组</span></span><br><span class="line">	mHits[mHits.length - <span class="number">1</span>] = SystemClock.uptimeMillis();</span><br><span class="line">	<span class="keyword">if</span> (mHits[<span class="number">0</span>] &gt;= (SystemClock.uptimeMillis() - <span class="number">500</span>)) &#123;</span><br><span class="line">		System.out.println(<span class="string">"是男人!!!"</span>);</span><br><span class="line">		mHits = <span class="keyword">new</span> <span class="keyword">long</span>[<span class="number">3</span>];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://oxy.pub/2015/09/08/AndroidTinyPoint/" data-id="cjveu9hcs001x7uyzepftly2b" class="article-share-link">分享到</a><div class="tags"><a href="/tags/Android/">Android</a></div><div class="post-nav"><a href="/2016/03/08/CocoaPods/" class="pre">CocoaPods安装流程</a><a href="/2015/06/01/iOSTinyPoint/" class="next">iOS小知识点集锦</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://oxy.pub"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/Objective-C/" style="font-size: 15px;">Objective-C</a> <a href="/tags/MyBatis/" style="font-size: 15px;">MyBatis</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/SSM/" style="font-size: 15px;">SSM</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/github/" style="font-size: 15px;">github</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/swiftknowledge/">swiftknowledge</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/24/ios-component1/">iOS组件化一【建立cocoaPods库】</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/19/iphoneXseries/">iphoneX系列适配用的宏定义</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/17/vuejs1/">在vuejs 中使用axios不能获取属性data的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/12/uipage/">UIPageViewController上下滑动页面重复Bug解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/28/PhpStorm-codeStyle/">PHPStorm配置自己喜欢的主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/10/macPHPConfig/">Mac系统下配置PHP运行环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/gitOperate/">Git命令行操作步骤</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/PLPlayerPackaging/">基于七牛播放器PLPlayer的二次封装(全屏) 以及七牛iOS播放器各个版本的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/01/niplayer/">一句话实现AVPlayer视频播放</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/enamor" title="Github" target="_blank">Github</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">O₂.</a><a rel="nofollow" target="_blank" href="https://oxy.pub"> nina.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/03/08/CocoaPods/" data-toggle="tooltip" data-placement="top" title="CocoaPods安装流程">&larr; 上一篇</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2015/06/01/iOSTinyPoint/" data-toggle="tooltip" data-placement="top" title="iOS小知识点集锦">下一篇 &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+				
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">标签云</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Android" title="Android">Android</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://www.sumoon.com" target="_blank">ACE theme</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kinggozhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; nina 2019 
+                    <br>
+                    Powered by <a href="http://www.hexo.io">Hexo</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Theme by <a href="https://github.com/kinggozhang/hexo-theme-ace">ACE</a> 
+					
+					
+					<i class="fa fa-eye" id="leancounter"></i>
+					
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+   <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+<!-- Bootstrap Core JavaScript -->
+
+   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+	<script src="/js/particles.js"></script>
+	<script src="/js/particles_config.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://oxy.pub/2015/09/08/AndroidTinyPoint/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://oxy.pub/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

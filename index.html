@@ -1,18 +1,1120 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>O₂</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/6.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">O₂</h1><a id="logo" href="/.">O₂</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2019/05/08/swiftknowledge/">swiftknowledge</a></h1><div class="post-meta">2019-05-08</div><div class="post-content"><h3 id="swift裁剪图片模糊处理"><a href="#swift裁剪图片模糊处理" class="headerlink" title="#### swift裁剪图片模糊处理"></a>#### swift裁剪图片模糊处理</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIImage</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 截取部分图片</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">imageAtRect</span><span class="params">(rect: CGRect)</span></span> -&gt; <span class="type">UIImage</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> rect = rect</span><br><span class="line">            rect.origin.x *= <span class="keyword">self</span>.scale</span><br><span class="line">            rect.origin.y *= <span class="keyword">self</span>.scale</span><br><span class="line">            rect.size.width *= <span class="keyword">self</span>.scale</span><br><span class="line">            rect.size.height *= <span class="keyword">self</span>.scale</span><br><span class="line">            <span class="keyword">let</span> imageRef = <span class="keyword">self</span>.cgImage!.cropping(to: rect)</span><br><span class="line">            <span class="keyword">let</span> image = <span class="type">UIImage</span>(cgImage: imageRef!, scale: <span class="keyword">self</span>.scale, orientation: <span class="keyword">self</span>.imageOrientation)</span><br><span class="line">            <span class="keyword">return</span> image</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2019/05/08/swiftknowledge/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/11/24/ios-component1/">iOS组件化一【建立cocoaPods库】</a></h1><div class="post-meta">2018-11-24</div><div class="post-content"><p><strong>iOS组件化学习之路一 【发布cocoaPods】</strong></p>
-<p>由于目前已经做过了好多款项目，积累了一些公用的工具类、分类、UI组件等、考虑到以后项目快速导入、以及组件化的实践、特此进行cocoaPods的探究</p>
-<p>自己的公共组件可以放到gitlab 或者 码云上来进行私有库的管理</p></div><p class="readmore"><a href="/2018/11/24/ios-component1/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/10/19/iphoneXseries/">iphoneX系列适配用的宏定义</a></h1><div class="post-meta">2018-10-19</div><div class="post-content"><p>去年适配的iPhoneX 的分辨率：2436 <em> 1125     ||     pt: 812 </em> 375<br>iPhoneXr的分辨率：1792 <em> 828     ||    pt:  896 </em> 414<br>iPhoneXs 的分辨率： 2436 <em> 1125   ||   pt: 812 </em> 375<br>iPhoneXs Max 的分辨率：2688 <em> 1242   ||    pt: 896 </em> 414</p></div><p class="readmore"><a href="/2018/10/19/iphoneXseries/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/10/17/vuejs1/">在vuejs 中使用axios不能获取属性data的解决方法</a></h1><div class="post-meta">2018-10-17</div><div class="post-content"><p><strong>在vuejs 中使用axios不能获取属性data的解决方法</strong></p>
-<p>axios中的this.labels,未被定义</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            labels: <span class="literal">null</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/10/17/vuejs1/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/10/12/uipage/">UIPageViewController上下滑动页面重复Bug解决方案</a></h1><div class="post-meta">2018-10-12</div><div class="post-content"><p><em>UIPageViewController实现小说阅读器遇到的bug及解决方案</em></p>
-<p><strong>上下滑动引起页面重复的bug</strong></p>
-<p><em>开始时的思路：修改UIPageViewController的UIPanGestureRecognizer手势</em></p></div><p class="readmore"><a href="/2018/10/12/uipage/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/06/28/PhpStorm-codeStyle/">PHPStorm配置自己喜欢的主题</a></h1><div class="post-meta">2018-06-28</div><div class="post-content"><p>####概述</p>
-<p> PHPstorm默认的屎黄色的主题小编灰常不喜欢所以才有了以下替换自己喜欢主题的文章</p>
-<p>以下为Mac系统操作如下</p>
-<h5 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h5><p>去下载自己喜欢的主题：<a href="http://www.phpstorm-themes.com/" target="_blank" rel="noopener">http://www.phpstorm-themes.com/</a>  如下图：</p></div><p class="readmore"><a href="/2018/06/28/PhpStorm-codeStyle/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/05/10/macPHPConfig/">Mac系统下配置PHP运行环境</a></h1><div class="post-meta">2018-05-10</div><div class="post-content"><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>Mac系统对于PHP运行非常友好,我们只需要进行简单的配置便可以开始进行使用,本篇文章将一步一步地介绍Apache、PHP和MySQL的安装与配置,为开始进行开发铺好路</p></div><p class="readmore"><a href="/2018/05/10/macPHPConfig/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/01/09/gitOperate/">Git命令行操作步骤</a></h1><div class="post-meta">2018-01-09</div><div class="post-content"><p><strong>Git base operate</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1. 创建目录文件夹并进入 pwd可查看现在所在的位置</span><br><span class="line">mkdir folder</span><br><span class="line"></span><br><span class="line">2. git创建</span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">3. 说明文档创建</span><br><span class="line">touch README.md</span><br><span class="line"></span><br><span class="line">4. 将改动添加到暂存区</span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line">5. 添加提交说明</span><br><span class="line">git commit -m ‘版本1’</span><br><span class="line"></span><br><span class="line">6. 将本地更改推送到远程分支</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line">7. 在git中重命名远程分支，其实就是先删除远程分支，然后重命名本地分支，再重新提交一个远程分支</span><br><span class="line">git push --delete origin devel //删除远程分支</span><br><span class="line">git branch -m oldName newName  //重新命名本地分支</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/01/09/gitOperate/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/09/07/PLPlayerPackaging/">基于七牛播放器PLPlayer的二次封装(全屏) 以及七牛iOS播放器各个版本的问题</a></h1><div class="post-meta">2017-09-07</div><div class="post-content">简单一句话实现播放功能。</div><p class="readmore"><a href="/2017/09/07/PLPlayerPackaging/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/05/01/niplayer/">一句话实现AVPlayer视频播放</a></h1><div class="post-meta">2017-05-01</div><div class="post-content">由于近期项目和视频相关的比较多，而项目中别人封装的不甚满意，所以自己进行了封装，希望有更好的扩展性，同时希望大家多多提取意见，以便于更好的封装。</div><p class="readmore"><a href="/2017/05/01/niplayer/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/03/11/Alamofire/">Alamofire4.4 网络请求的封装</a></h1><div class="post-meta">2017-03-11</div><div class="post-content">基于Alamofire4.4 GET、POST 文件上传的封装</div><p class="readmore"><a href="/2017/03/11/Alamofire/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2016/12/11/GithubCode/">github优秀资源(iOS/Android/Java)</a></h1><div class="post-meta">2016-12-11</div><div class="post-content">github优秀资源推荐</div><p class="readmore"><a href="/2016/12/11/GithubCode/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2016/06/08/autoRotate/">iOS状态栏旋转问题</a></h1><div class="post-meta">2016-06-08</div><div class="post-content">iOS状态栏无法旋转解决方案</div><p class="readmore"><a href="/2016/06/08/autoRotate/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2016/04/26/Gradle-MyBatisGenerator/">Intellij IDEA 中结合 Gradle 使用 MyBatis Generator 逆向生成代码</a></h1><div class="post-meta">2016-04-26</div><div class="post-content"><p>在 Intellij IDEA 中结合 Gradle 使用 MyBatis Generator 逆向生成代码</p>
-<ul>
-<li>JDK 1.8</li>
-<li>Gradle 3.5</li>
-<li>Intellij IDEA 2017</li></div><p class="readmore"><a href="/2016/04/26/Gradle-MyBatisGenerator/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2016/04/24/ssm2/">intellij idea 2016 gradle搭建 spring + springMVC + mybatis 框架</a></h1><div class="post-meta">2016-04-24</div><div class="post-content">Mac本 intellij + Cradle 搭建 ssm项目详细步骤</div><p class="readmore"><a href="/2016/04/24/ssm2/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2016/04/22/ssm1/">intellij idea 2016 gradle搭建web工程</a></h1><div class="post-meta">2016-04-22</div><div class="post-content">intellij + Cradle 搭建 web工程</div><p class="readmore"><a href="/2016/04/22/ssm1/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2016/03/15/iOSVideoBlog/">iOS音视频学习</a></h1><div class="post-meta">2016-03-15</div><div class="post-content"><p><strong>音视频学习资料整理—–编码篇（VideoToolBox）</strong></p>
-<p>由于项目是直播项目所以闲暇之余需要学习一下音视频编解码相关的知识。</p>
-<p>目前iOS音视频编解码主要有两种编解码框架FFmpeg和苹果原生框架VideoToolBox 自iOS8以后开放，FFmpeg是基于CPU进行编解码的，俗称软编码，而VideoToolBox是基于GPU进行编解码的，俗称硬编码。这里我主要研究的是苹果开放的VideoToolBox。<br>以下是对我学习视频编码学习博客做一个整理记录，技巧只有一个就是多看多写，不懂就查：</p></div><p class="readmore"><a href="/2016/03/15/iOSVideoBlog/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2016/03/08/CocoaPods/">CocoaPods安装流程</a></h1><div class="post-meta">2016-03-08</div><div class="post-content"><p><em>2018-04-08 电脑格式化了重装CocoaPods、更新CocoaPods安装步骤，很多次安装pod setup很慢经以下步骤安装成功切安装速度可以</em></p>
-<h2 id="如何下载和安装CocoaPods？"><a href="#如何下载和安装CocoaPods？" class="headerlink" title="如何下载和安装CocoaPods？"></a>如何下载和安装CocoaPods？</h2><ul></div><p class="readmore"><a href="/2016/03/08/CocoaPods/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2015/09/08/AndroidTinyPoint/">安卓学习复习笔记</a></h1><div class="post-meta">2015-09-08</div><div class="post-content">安卓学习记录以供后期复习</div><p class="readmore"><a href="/2015/09/08/AndroidTinyPoint/">阅读更多</a></p></div><div class="post"><h1 class="post-title"><a href="/2015/06/01/iOSTinyPoint/">iOS小知识点集锦</a></h1><div class="post-meta">2015-06-01</div><div class="post-content">自己平时的小知识点笔记</div><p class="readmore"><a href="/2015/06/01/iOSTinyPoint/">阅读更多</a></p></div><nav class="page-navigator"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a></nav></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://oxy.pub"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Swift/" style="font-size: 15px;">Swift</a> <a href="/tags/Objective-C/" style="font-size: 15px;">Objective-C</a> <a href="/tags/MyBatis/" style="font-size: 15px;">MyBatis</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/SSM/" style="font-size: 15px;">SSM</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/github/" style="font-size: 15px;">github</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/swiftknowledge/">swiftknowledge</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/24/ios-component1/">iOS组件化一【建立cocoaPods库】</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/19/iphoneXseries/">iphoneX系列适配用的宏定义</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/17/vuejs1/">在vuejs 中使用axios不能获取属性data的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/12/uipage/">UIPageViewController上下滑动页面重复Bug解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/28/PhpStorm-codeStyle/">PHPStorm配置自己喜欢的主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/10/macPHPConfig/">Mac系统下配置PHP运行环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/09/gitOperate/">Git命令行操作步骤</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/PLPlayerPackaging/">基于七牛播放器PLPlayer的二次封装(全屏) 以及七牛iOS播放器各个版本的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/01/niplayer/">一句话实现AVPlayer视频播放</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/enamor" title="Github" target="_blank">Github</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">O₂.</a><a rel="nofollow" target="_blank" href="https://oxy.pub"> nina.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://oxy.pub/">
+
+    <!-- Bootstrap Core CSS -->
+
+   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+    
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+	<link rel="stylesheet" href="/css/w3.css">
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+    }
+   .post-heading{
+    padding:20px;
+    }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+</style>
+
+<header id="headerid" class="w3-indigo intro-header" style="position:relative;">
+    <!-- Signature -->
+	
+        <div class="container">
+            <div class=" row" >
+			
+			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
+			
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
+                
+				
+                    <div class="site-heading"  style="padding:40px">
+                        <h1>O₂</h1>
+                        <!--<hr class="small">-->
+                        <span class="subheading"></span>
+                    </div>
+                
+                
+                </div>
+            </div>
+        </div>
+  
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">O₂</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a  href="/">主页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
+                <!-- Main Content -->
+
+
+
+
+<div class="post-preview">
+
+    <a href="/2019/05/08/swiftknowledge/">
+        <h2 class="post-title">
+            swiftknowledge
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            #### swift裁剪图片模糊处理1234567891011121314extension UIImage &#123;    // 截取部分图片    func imageAtRect(rect: CGRect) -&gt; UIImage&#123;            var rect = rect            rect.origin.x *= self.scale   ......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2019-05-08
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2018/11/24/ios-component1/">
+        <h2 class="post-title">
+            iOS组件化一【建立cocoaPods库】
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            iOS组件化学习之路一 【发布cocoaPods】
+由于目前已经做过了好多款项目，积累了一些公用的工具类、分类、UI组件等、考虑到以后项目快速导入、以及组件化的实践、特此进行cocoaPods的探究
+自己的公共组件可以放到gitlab 或者 码云上来进行私有库的管理
+本文讲的是自己写的一个txt阅读器发布cocoaPods的过程：
+1、在github上创建一个自己的公有仓库，并上传源码
+2、......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2018-11-24
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2018/10/19/iphoneXseries/">
+        <h2 class="post-title">
+            iphoneX系列适配用的宏定义
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            去年适配的iPhoneX 的分辨率：2436  1125     ||     pt: 812  375iPhoneXr的分辨率：1792  828     ||    pt:  896  414iPhoneXs 的分辨率： 2436  1125   ||   pt: 812  375iPhoneXs Max 的分辨率：2688  1242   ||    pt: 896  414
+导航栏和......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2018-10-19
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2018/10/17/vuejs1/">
+        <h2 class="post-title">
+            在vuejs 中使用axios不能获取属性data的解决方法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            在vuejs 中使用axios不能获取属性data的解决方法
+axios中的this.labels,未被定义
+12345data()&#123;        return &#123;            labels: null,        &#125;    &#125;,
+12345678910fetchData() &#123;      axios.get('/static......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2018-10-17
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2018/10/12/uipage/">
+        <h2 class="post-title">
+            UIPageViewController上下滑动页面重复Bug解决方案
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            UIPageViewController实现小说阅读器遇到的bug及解决方案
+上下滑动引起页面重复的bug
+开始时的思路：修改UIPageViewController的UIPanGestureRecognizer手势
+以下方案引发了以下bug
+The number of view controllers provided (0) doesn’t match the number requir......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2018-10-12
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2018/06/28/PhpStorm-codeStyle/">
+        <h2 class="post-title">
+            PHPStorm配置自己喜欢的主题
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            ####概述
+ PHPstorm默认的屎黄色的主题小编灰常不喜欢所以才有了以下替换自己喜欢主题的文章
+以下为Mac系统操作如下
+第一步去下载自己喜欢的主题：http://www.phpstorm-themes.com/  如下图：
+
+谷歌浏览器默认会直接在浏览器打开不会去下载直接存储为xx.icls文件即可
+第二步根据上面网站帮助介绍把下载的文件放入对应的路径中去
+小编~/Library/P......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2018-06-28
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2018/05/10/macPHPConfig/">
+        <h2 class="post-title">
+            Mac系统下配置PHP运行环境
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            概述Mac系统对于PHP运行非常友好,我们只需要进行简单的配置便可以开始进行使用,本篇文章将一步一步地介绍Apache、PHP和MySQL的安装与配置,为开始进行开发铺好路
+操作系统：Mac OS    数据库：mysql8.0.11  PHP7.1.14
+Apache启动Apache服务在Mac系统中已经安装好了Apache服务,我们只需要通过如下方式启动即可直接使用
+在终端中输入如下命令......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2018-05-10
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2018/01/09/gitOperate/">
+        <h2 class="post-title">
+            Git命令行操作步骤
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            Git base operate
+123456789101112131415161718192021221. 创建目录文件夹并进入 pwd可查看现在所在的位置mkdir folder2. git创建git init3. 说明文档创建touch README.md4. 将改动添加到暂存区git add .5. 添加提交说明git commit -m ‘版本1’6. 将本地更改推送到远程分支gi......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2018-01-09
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2017/09/07/PLPlayerPackaging/">
+        <h2 class="post-title">
+            基于七牛播放器PLPlayer的二次封装(全屏) 以及七牛iOS播放器各个版本的问题
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            源码地址：https://github.com/enamor/PLPlayerPackaging效果展示:
+基于PLPlayer封装的视频播放器  目前用的是2.4.3版本、一句话即可实现视频的播放 支持横屏、竖屏，监听屏幕旋转
+蛋疼的问题：
+
+2.3 频繁切换播放有崩溃问题 频繁切换无法播放同2.4.3解决方式
+2.4.3  pause回调状态不对  频繁切换播放无法播放需要以下处理(
+
+......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2017-09-07
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2017/05/01/niplayer/">
+        <h2 class="post-title">
+            一句话实现AVPlayer视频播放
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            源码地址：Github    https://github.com/enamor/NIPlayer
+基于AVPlayer封装的视频播放器 、一句话即可实现视频的播放 支持横屏、竖屏，监听屏幕旋转，上下滑动调节音量、屏幕亮度，左右滑动调节播放进度，快进画面预览等
+使用说明：
+播放器需要传入一view 自动适应view的尺寸 为了简化全屏模式统一使用屏幕旋转的方式进行适配全屏、目前控制层UI未做......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2017-05-01
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2017/03/11/Alamofire/">
+        <h2 class="post-title">
+            Alamofire4.4 网络请求的封装
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            github： https://github.com/enamor/Alamofire/
+Usage
+
+Making a  GET Request     it’s just requests for JSON
+1234567891011121314NIRequest.getRequest("https://xxx.com", success: &#123; (dictResponse) i......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2017-03-11
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2016/12/11/GithubCode/">
+        <h2 class="post-title">
+            github优秀资源(iOS/Android/Java)
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            IOSOC动画
+pop动画框架 FaceBook出品的动画框架，绝对牛逼！
+JHChainableAnimations oc的链式代码来操作动画，非常不错，省事简单
+DCAnimationKit 一些简单的动画封装，一行代码就可用了
+Canvas 可以通过在 Storyboard 中指定 User Defined Runtime Attributes 来实现一些 Canvas 中预设的动画
+......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2016-12-11
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2016/06/08/autoRotate/">
+        <h2 class="post-title">
+            iOS状态栏旋转问题
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1、window.rootViewController 为VC的时候 下面两种情况改方法仍须在VC中重写
+1234//控制器中重写- (BOOL)shouldAutorotate &#123;    return NO;&#125;
+2、window.rootViewController 为nav的时候
+12345678910111213//UINavigationController 子类......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2016-06-08
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2016/04/26/Gradle-MyBatisGenerator/">
+        <h2 class="post-title">
+            Intellij IDEA 中结合 Gradle 使用 MyBatis Generator 逆向生成代码
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            在 Intellij IDEA 中结合 Gradle 使用 MyBatis Generator 逆向生成代码
+
+JDK 1.8
+Gradle 3.5
+Intellij IDEA 2017
+
+前言Intellij IDEA 的教程较少，且 MyBatis Generator 不支持 Gradle 直接运行，因此这次是在自己折腾项目过程中，根据一些参考资料加上自己的实践得出的结论，并附上相应的 ......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2016-04-26
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2016/04/24/ssm2/">
+        <h2 class="post-title">
+            intellij idea 2016 gradle搭建 spring + springMVC + mybatis 框架
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            操作系统：Mac OS
+在上一篇文章intellij idea 2016 gradle搭建 web工程基础上进行如下操作
+demo源码已经迁移至Github    &lt;https://github.com/enamor/ssm
+整体目录结构如下：
+
+1、gradle进行项目jar包引入 bulid.gradle 文件dependencies 下加入
+1234567891011121314......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2016-04-24
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2016/04/22/ssm1/">
+        <h2 class="post-title">
+            intellij idea 2016 gradle搭建web工程
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前言：以前做java web 开发一直用eclipse 之后用了intellij idea之后就爱不释手。intellij idea搭建SSM框架过程中也颇费了一写功夫、现写篇文章来供大家参考。以求共同进步操作系统：Mac OS
+首先用gradle 创建java web 应用、之后再进行SSM的配置
+1、如下图，第一步新建gradle工程，file-&gt;new-&gt;project 
+......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2016-04-22
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2016/03/15/iOSVideoBlog/">
+        <h2 class="post-title">
+            iOS音视频学习
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            音视频学习资料整理—–编码篇（VideoToolBox）
+由于项目是直播项目所以闲暇之余需要学习一下音视频编解码相关的知识。
+目前iOS音视频编解码主要有两种编解码框架FFmpeg和苹果原生框架VideoToolBox 自iOS8以后开放，FFmpeg是基于CPU进行编解码的，俗称软编码，而VideoToolBox是基于GPU进行编解码的，俗称硬编码。这里我主要研究的是苹果开放的VideoT......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2016-03-15
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2016/03/08/CocoaPods/">
+        <h2 class="post-title">
+            CocoaPods安装流程
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            2018-04-08 电脑格式化了重装CocoaPods、更新CocoaPods安装步骤，很多次安装pod setup很慢经以下步骤安装成功切安装速度可以
+如何下载和安装CocoaPods？
+第一步：安装ruby
+
+不能一上来就换ruby源，虽然mac自带了ruby，但是版本一般比较低，如果不进行更新会导致版本依赖问题。
+这里使用rvm来管理ruby，它允许共存多个ruby。RVM：Ruby......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2016-03-08
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2015/09/08/AndroidTinyPoint/">
+        <h2 class="post-title">
+            安卓学习复习笔记
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            进入应用程序主界面123456789/** * 进入应用程序主界面 */protected void enterHome() &#123;	Intent intent = new Intent(this,HomeActivity.class);	startActivity(intent);	//在开启一个新的界面后,将导航界面关闭(导航界面只可见一次)	finish();&#125;
+获取版......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2015-09-08
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2015/06/01/iOSTinyPoint/">
+        <h2 class="post-title">
+            iOS小知识点集锦
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            [TOC]
+###iOS10 AVPlayer有时播放失败的处理
+1234567891011121314151617181920212223242526//如果你的视频使用的是HLS(m3u8)协议的，是不会由于升级ios10出现这个播放问题的。 如果不是基于HLS协议的，解决方法如下if([[UIDevice currentDevice] systemVersion].intValue&g......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by nina on
+            2015-06-01
+        </p>
+    
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+        <li class="next">
+            <a href="/page/2/">Older Posts &rarr;</a>
+        </li>
+    
+</ul>
+
+
+
+
+
+                <!-- 如果开启评论功能 -->
+                
+            </div>
+
+          <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Featured Tags -->
+
+<section>
+    <!-- no hr -->
+    <h5><a href="/tags/">标签云</a></h5>
+    <div class="tags">
+        
+            
+            <a href="/tags/#Swift" title="Swift" rel="2">Swift</a>
+            
+        
+            
+            <a href="/tags/#Objective-C" title="Objective-C" rel="7">Objective-C</a>
+            
+        
+            
+            <a href="/tags/#MyBatis" title="MyBatis" rel="1">MyBatis</a>
+            
+        
+            
+            <a href="/tags/#PHP" title="PHP" rel="2">PHP</a>
+            
+        
+            
+            <a href="/tags/#iOS" title="iOS" rel="2">iOS</a>
+            
+        
+            
+            <a href="/tags/#Git" title="Git" rel="1">Git</a>
+            
+        
+            
+            <a href="/tags/#vue" title="vue" rel="1">vue</a>
+            
+        
+            
+            <a href="/tags/#SSM" title="SSM" rel="2">SSM</a>
+            
+        
+            
+            <a href="/tags/#Android" title="Android" rel="1">Android</a>
+            
+        
+            
+            <a href="/tags/#github" title="github" rel="1">github</a>
+            
+        
+    </div>
+</section>
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+    <h5><a href="/about/">关于</a></h5>
+    <div class="short-about">
+
+        
+            <img id = "avatar_pic" src="/img/avatar/logo.png" />
+        
+
+        
+            <p>INNOVATION IS KING!</p>
+        
+
+        <!-- SNS Link -->
+        <ul class="list-inline">
+            
+            
+            
+
+            
+
+            
+
+            
+                <li>
+                    <a target="_blank"  href="https://github.com/kinggozhang">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            
+            
+            
+            
+        </ul>
+    </div>
+</section>
+
+        <hr>
+    
+        
+  <h5>最近发表</h3>
+  <div class="widget">
+    <ul>
+      
+        <li>
+          <a href="/2019/05/08/swiftknowledge/">swiftknowledge</a>
+        </li>
+      
+        <li>
+          <a href="/2018/11/24/ios-component1/">iOS组件化一【建立cocoaPods库】</a>
+        </li>
+      
+        <li>
+          <a href="/2018/10/19/iphoneXseries/">iphoneX系列适配用的宏定义</a>
+        </li>
+      
+        <li>
+          <a href="/2018/10/17/vuejs1/">在vuejs 中使用axios不能获取属性data的解决方法</a>
+        </li>
+      
+        <li>
+          <a href="/2018/10/12/uipage/">UIPageViewController上下滑动页面重复Bug解决方案</a>
+        </li>
+      
+    </ul>
+  </div>
+
+        <hr>
+    
+        
+    <h5>归档</h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+
+        <hr>
+    
+        <!-- Friends Blog -->
+
+<h5>友链</h5>
+<ul class="list-inline">
+
+    
+        <li><a href="http://www.sumoon.com" target="_blank">ACE theme</a></li>
+    
+</ul>
+
+
+        <hr>
+    
+</div>
+
+
+        
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kinggozhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; nina 2019 
+                    <br>
+                    Powered by <a href="http://www.hexo.io">Hexo</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Theme by <a href="https://github.com/kinggozhang/hexo-theme-ace">ACE</a> 
+					
+					
+					<i class="fa fa-eye" id="leancounter"></i>
+					
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+   <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+<!-- Bootstrap Core JavaScript -->
+
+   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+	<script src="/js/particles.js"></script>
+	<script src="/js/particles_config.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://oxy.pub/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://oxy.pub/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
