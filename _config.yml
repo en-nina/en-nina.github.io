@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: O₂
+title: 点点
 subtitle:
 description:
-author: nina
+author: zhouen
 language: zh-CN
 email: enamor.en@gmail.com #联系邮箱
 timezone:
@@ -71,7 +71,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: maupassant
+theme: ace
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
