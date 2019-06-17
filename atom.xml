@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>O₂</title>
+  <title>点点</title>
   <icon>https://www.gravatar.com/avatar/c13e6d6676638886d017653e29ab7ba1</icon>
   
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://oxy.pub/</id>
   
   <author>
-    <name>nina</name>
+    <name>zhouen</name>
     <email>enamor.en@gmail.com</email>
   </author>
   
