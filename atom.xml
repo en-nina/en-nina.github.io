@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>点点</title>
-  <icon>https://www.gravatar.com/avatar/c13e6d6676638886d017653e29ab7ba1</icon>
+  <icon>https://www.gravatar.com/avatar/d14b7605e0d47529bdc0e7907e08c644</icon>
   
   <link href="/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>zhouen</name>
-    <email>enamor.en@gmail.com</email>
+    <email>zhou.en@foxmail.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
