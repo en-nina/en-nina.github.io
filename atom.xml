@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>点点</title>
+  <title>发现更大的世界！</title>
   <icon>https://www.gravatar.com/avatar/d14b7605e0d47529bdc0e7907e08c644</icon>
-  
+  <subtitle>abc</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oxy.pub/"/>
