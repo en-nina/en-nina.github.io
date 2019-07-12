@@ -54,6 +54,21 @@ git branch -m oldName newName  //重新命名本地分支
 
 
 
+------
+
+**Git branch delete**
+
+~~~shell
+git push origin --delete dev  删除远程分支
+
+git branch -a  查看分支
+
+git branch -D dev 删除本地分支
+
+~~~
+
+
+
 ****
 
 **Git global setup**

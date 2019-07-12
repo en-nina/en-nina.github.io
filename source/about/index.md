@@ -5,11 +5,11 @@ date: 2012-04-13 17:04:29
 
 
 
-*站主：*nina
+*站主：*zhouen
 
-*email：*845607651@qq.com
+*email：*zhou.en@foxmail.com
 
-*QQ交流群：*518557977 （iOS、Android、Java）
+*QQ：*845607651
 
 *Github：*https://github.com/enamor
 
