@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://oxy.pub/2018/01/09/gitOperate/</loc>
+    
+    <lastmod>2019-07-12T03:26:28.480Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://oxy.pub/about/index.html</loc>
     
     <lastmod>2019-06-18T03:29:45.184Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://oxy.pub/2018/11/24/ios-component1/</loc>
     
     <lastmod>2018-11-27T07:44:22.560Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://oxy.pub/2018/01/09/gitOperate/</loc>
-    
-    <lastmod>2018-11-25T14:38:11.517Z</lastmod>
     
   </url>
   
