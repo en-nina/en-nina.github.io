@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          swiftZipImage - 发现了点什么！
+        
+    </title>
+
+    <link rel="canonical" href="http://oxy.pub/2019/07/17/swiftZipImage/">
+
+    <!-- Bootstrap Core CSS -->
+
+   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+    
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+	<link rel="stylesheet" href="/css/w3.css">
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+    }
+   .post-heading{
+    padding:20px;
+    }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+</style>
+
+<header id="headerid" class="w3-indigo intro-header" style="position:relative;">
+    <!-- Signature -->
+	
+        <div class="container">
+            <div class=" row" >
+			
+			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
+			
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
+                
+                    <div class="post-heading" style="padding:40px">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Swift" title="Swift">Swift</a>
+                            
+                        </div>
+                        <h1>swiftZipImage</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by zhouen on
+                            2019-07-17
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+  
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">发现了点什么！</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a  href="/">主页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="iOS图片压缩上传"><a href="#iOS图片压缩上传" class="headerlink" title="iOS图片压缩上传"></a>iOS图片压缩上传</h1><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>很多时候我们上传图片经常遇到一些问题，要不就是图片质量变差，要不就是图片太大等等问题。这里，我找到了一个算是目前比较符合需求的解决方案。在原有基础上增加了动态压缩系数，改写成Swift版本，最底下贴出OC版本。</p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>先调整分辨率，分辨率可以自己设定一个值，大于的就缩小到这分辨率，小余的就保持原本分辨率。然后再根据图片最终大小来设置压缩比，比如传入maxSize = 30KB，最终计算大概这个大小的压缩比。基本上最终出来的图片数据根据当前分辨率能保持差不多的大小同时不至于太模糊，跟微信，微博最终效果应该是差不多的，代码仍然有待优化！</p>
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><h3 id="OC-版本（推荐）"><a href="#OC-版本（推荐）" class="headerlink" title="OC 版本（推荐）"></a>OC 版本（推荐）</h3><p>基于网友的要求，我把 OC 版本的代码也贴出来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - 压缩图片到指定大小(单位KB)</span><br><span class="line">+ (NSData *)resetSizeOfImageData:(UIImage *)sourceImage maxSize:(NSInteger)maxSize &#123;</span><br><span class="line">    //先判断当前质量是否满足要求，不满足再进行压缩</span><br><span class="line">    __block NSData *finallImageData = UIImageJPEGRepresentation(sourceImage,1.0);</span><br><span class="line">    NSUInteger sizeOrigin   = finallImageData.length;</span><br><span class="line">    NSUInteger sizeOriginKB = sizeOrigin / 1000;</span><br><span class="line">    </span><br><span class="line">    if (sizeOriginKB &lt;= maxSize) &#123;</span><br><span class="line">        return finallImageData;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //获取原图片宽高比</span><br><span class="line">    CGFloat sourceImageAspectRatio = sourceImage.size.width/sourceImage.size.height;</span><br><span class="line">    //先调整分辨率</span><br><span class="line">    CGSize defaultSize = CGSizeMake(1024, 1024/sourceImageAspectRatio);</span><br><span class="line">    UIImage *newImage = [self newSizeImage:defaultSize image:sourceImage];</span><br><span class="line">    </span><br><span class="line">    finallImageData = UIImageJPEGRepresentation(newImage,1.0);</span><br><span class="line">    </span><br><span class="line">    //保存压缩系数</span><br><span class="line">    NSMutableArray *compressionQualityArr = [NSMutableArray array];</span><br><span class="line">    CGFloat avg   = 1.0/250;</span><br><span class="line">    CGFloat value = avg;</span><br><span class="line">    for (int i = 250; i &gt;= 1; i--) &#123;</span><br><span class="line">        value = i*avg;</span><br><span class="line">        [compressionQualityArr addObject:@(value)];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /*</span><br><span class="line">     调整大小</span><br><span class="line">     说明：压缩系数数组compressionQualityArr是从大到小存储。</span><br><span class="line">     */</span><br><span class="line">    //思路：使用二分法搜索</span><br><span class="line">    __block NSData *canCompressMinData = [NSData data];//当无法压缩到指定大小时，用于存储当前能够压缩到的最小值数据。</span><br><span class="line">    [self halfFuntion:compressionQualityArr image:newImage sourceData:finallImageData maxSize:maxSize resultBlock:^(NSData *finallData, NSData *tempData) &#123;</span><br><span class="line">        finallImageData = finallData;</span><br><span class="line">        canCompressMinData = tempData;</span><br><span class="line">    &#125;];</span><br><span class="line">    //如果还是未能压缩到指定大小，则进行降分辨率</span><br><span class="line">    while (finallImageData.length == 0) &#123;</span><br><span class="line">        //每次降100分辨率</span><br><span class="line">        CGFloat reduceWidth = 100.0;</span><br><span class="line">        CGFloat reduceHeight = 100.0/sourceImageAspectRatio;</span><br><span class="line">        if (defaultSize.width-reduceWidth &lt;= 0 || defaultSize.height-reduceHeight &lt;= 0) &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        defaultSize = CGSizeMake(defaultSize.width-reduceWidth, defaultSize.height-reduceHeight);</span><br><span class="line">        UIImage *image = [self newSizeImage:defaultSize</span><br><span class="line">                                      image:[UIImage imageWithData:UIImageJPEGRepresentation(newImage,[[compressionQualityArr lastObject] floatValue])]];</span><br><span class="line">        [self halfFuntion:compressionQualityArr image:image sourceData:UIImageJPEGRepresentation(image,1.0) maxSize:maxSize resultBlock:^(NSData *finallData, NSData *tempData) &#123;</span><br><span class="line">            finallImageData = finallData;</span><br><span class="line">            canCompressMinData = tempData;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">    //如果分辨率已经无法再降低，则直接使用能够压缩的那个最小值即可</span><br><span class="line">    if (finallImageData.length==0) &#123;</span><br><span class="line">        finallImageData = canCompressMinData;</span><br><span class="line">    &#125;</span><br><span class="line">    return finallImageData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark 调整图片分辨率/尺寸（等比例缩放）</span><br><span class="line">///调整图片分辨率/尺寸（等比例缩放）</span><br><span class="line">+ (UIImage *)newSizeImage:(CGSize)size image:(UIImage *)sourceImage &#123;</span><br><span class="line">    CGSize newSize = CGSizeMake(sourceImage.size.width, sourceImage.size.height);</span><br><span class="line">    </span><br><span class="line">    CGFloat tempHeight = newSize.height / size.height;</span><br><span class="line">    CGFloat tempWidth = newSize.width / size.width;</span><br><span class="line">    </span><br><span class="line">    if (tempWidth &gt; 1.0 &amp;&amp; tempWidth &gt; tempHeight) &#123;</span><br><span class="line">        newSize = CGSizeMake(sourceImage.size.width / tempWidth, sourceImage.size.height / tempWidth);</span><br><span class="line">    &#125; else if (tempHeight &gt; 1.0 &amp;&amp; tempWidth &lt; tempHeight) &#123;</span><br><span class="line">        newSize = CGSizeMake(sourceImage.size.width / tempHeight, sourceImage.size.height / tempHeight);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //    UIGraphicsBeginImageContext(newSize);</span><br><span class="line">    UIGraphicsBeginImageContextWithOptions(newSize, NO, 1);</span><br><span class="line">    [sourceImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];</span><br><span class="line">    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    return newImage;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark 二分法</span><br><span class="line">///二分法，block回调中finallData长度不为零表示最终压缩到了指定的大小，如果为零则表示压缩不到指定大小。tempData表示当前能够压缩到的最小值。</span><br><span class="line">+ (void)halfFuntion:(NSArray *)arr image:(UIImage *)image sourceData:(NSData *)finallImageData maxSize:(NSInteger)maxSize resultBlock:(void(^)(NSData *finallData, NSData *tempData))block &#123;</span><br><span class="line">    NSData *tempData = [NSData data];</span><br><span class="line">    NSUInteger start = 0;</span><br><span class="line">    NSUInteger end = arr.count - 1;</span><br><span class="line">    NSUInteger index = 0;</span><br><span class="line">    </span><br><span class="line">    NSUInteger difference = NSIntegerMax;</span><br><span class="line">    while(start &lt;= end) &#123;</span><br><span class="line">        index = start + (end - start)/2;</span><br><span class="line">        </span><br><span class="line">        finallImageData = UIImageJPEGRepresentation(image,[arr[index] floatValue]);</span><br><span class="line">        </span><br><span class="line">        NSUInteger sizeOrigin = finallImageData.length;</span><br><span class="line">        NSUInteger sizeOriginKB = sizeOrigin / 1000;</span><br><span class="line">        NSLog(@&quot;当前降到的质量：%ld&quot;, (unsigned long)sizeOriginKB);</span><br><span class="line">        //        NSLog(@&quot;\nstart：%zd\nend：%zd\nindex：%zd\n压缩系数：%lf&quot;, start, end, (unsigned long)index, [arr[index] floatValue]);</span><br><span class="line">        </span><br><span class="line">        if (sizeOriginKB &gt; maxSize) &#123;</span><br><span class="line">            start = index + 1;</span><br><span class="line">        &#125; else if (sizeOriginKB &lt; maxSize) &#123;</span><br><span class="line">            if (maxSize-sizeOriginKB &lt; difference) &#123;</span><br><span class="line">                difference = maxSize-sizeOriginKB;</span><br><span class="line">                tempData = finallImageData;</span><br><span class="line">            &#125;</span><br><span class="line">            if (index&lt;=0) &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            end = index - 1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    NSData *d = [NSData data];</span><br><span class="line">    if (tempData.length==0) &#123;</span><br><span class="line">        d = finallImageData;</span><br><span class="line">    &#125;</span><br><span class="line">    if (block) &#123;</span><br><span class="line">        block(tempData, d);</span><br><span class="line">    &#125;</span><br><span class="line">//    return tempData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Swift3-0版本二分法压缩模式（推荐）"><a href="#Swift3-0版本二分法压缩模式（推荐）" class="headerlink" title="Swift3.0版本二分法压缩模式（推荐）"></a>Swift3.0版本二分法压缩模式（推荐）</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MARK: - 降低质量</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">resetSizeOfImageData</span><span class="params">(sourceImage: UIImage!, maxSize: Int)</span></span> -&gt; <span class="type">NSData</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//先判断当前质量是否满足要求，不满足再进行压缩</span></span><br><span class="line">        <span class="keyword">var</span> finallImageData = <span class="type">UIImageJPEGRepresentation</span>(sourceImage,<span class="number">1.0</span>)</span><br><span class="line">        <span class="keyword">let</span> sizeOrigin      = finallImageData?.<span class="built_in">count</span></span><br><span class="line">        <span class="keyword">let</span> sizeOriginKB    = sizeOrigin! / <span class="number">1024</span></span><br><span class="line">        <span class="keyword">if</span> sizeOriginKB &lt;= maxSize &#123;</span><br><span class="line">            <span class="keyword">return</span> finallImageData! <span class="keyword">as</span> <span class="type">NSData</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获取原图片宽高比</span></span><br><span class="line">        <span class="keyword">let</span> sourceImageAspectRatio = sourceImage.size.width/sourceImage.size.height</span><br><span class="line">        <span class="comment">//先调整分辨率</span></span><br><span class="line">        <span class="keyword">var</span> defaultSize = <span class="type">CGSize</span>(width: <span class="number">1024</span>, height: <span class="number">1024</span>/sourceImageAspectRatio)</span><br><span class="line">        <span class="keyword">let</span> newImage = <span class="keyword">self</span>.newSizeImage(size: defaultSize, sourceImage: sourceImage)</span><br><span class="line">        </span><br><span class="line">        finallImageData = <span class="type">UIImageJPEGRepresentation</span>(newImage,<span class="number">1.0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//保存压缩系数</span></span><br><span class="line">        <span class="keyword">let</span> compressionQualityArr = <span class="type">NSMutableArray</span>()</span><br><span class="line">        <span class="keyword">let</span> avg = <span class="type">CGFloat</span>(<span class="number">1.0</span>/<span class="number">250</span>)</span><br><span class="line">        <span class="keyword">var</span> value = avg</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">250</span></span><br><span class="line">        <span class="keyword">repeat</span> &#123;</span><br><span class="line">            i -= <span class="number">1</span></span><br><span class="line">            value = <span class="type">CGFloat</span>(i)*avg</span><br><span class="line">            compressionQualityArr.add(value)</span><br><span class="line">        &#125; <span class="keyword">while</span> i &gt;= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         调整大小</span></span><br><span class="line"><span class="comment">         说明：压缩系数数组compressionQualityArr是从大到小存储。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">//思路：使用二分法搜索</span></span><br><span class="line">        finallImageData = <span class="keyword">self</span>.halfFuntion(arr: compressionQualityArr.copy() <span class="keyword">as</span>! [<span class="type">CGFloat</span>], image: newImage, sourceData: finallImageData!, maxSize: maxSize)</span><br><span class="line">        <span class="comment">//如果还是未能压缩到指定大小，则进行降分辨率</span></span><br><span class="line">        <span class="keyword">while</span> finallImageData?.<span class="built_in">count</span> == <span class="number">0</span> &#123;</span><br><span class="line">            <span class="comment">//每次降100分辨率</span></span><br><span class="line">            <span class="keyword">let</span> reduceWidth = <span class="number">100.0</span></span><br><span class="line">            <span class="keyword">let</span> reduceHeight = <span class="number">100.0</span>/sourceImageAspectRatio</span><br><span class="line">            <span class="keyword">if</span> (defaultSize.width-<span class="type">CGFloat</span>(reduceWidth)) &lt;= <span class="number">0</span> || (defaultSize.height-<span class="type">CGFloat</span>(reduceHeight)) &lt;= <span class="number">0</span> &#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">            defaultSize = <span class="type">CGSize</span>(width: (defaultSize.width-<span class="type">CGFloat</span>(reduceWidth)), height: (defaultSize.height-<span class="type">CGFloat</span>(reduceHeight)))</span><br><span class="line">            <span class="keyword">let</span> image = <span class="keyword">self</span>.newSizeImage(size: defaultSize, sourceImage: <span class="type">UIImage</span>.<span class="keyword">init</span>(data: <span class="type">UIImageJPEGRepresentation</span>(newImage, compressionQualityArr.lastObject <span class="keyword">as</span>! <span class="type">CGFloat</span>)!)!)</span><br><span class="line">            finallImageData = <span class="keyword">self</span>.halfFuntion(arr: compressionQualityArr.copy() <span class="keyword">as</span>! [<span class="type">CGFloat</span>], image: image, sourceData: <span class="type">UIImageJPEGRepresentation</span>(image,<span class="number">1.0</span>)!, maxSize: maxSize)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> finallImageData! <span class="keyword">as</span> <span class="type">NSData</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: - 调整图片分辨率/尺寸（等比例缩放）</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">newSizeImage</span><span class="params">(size: CGSize, sourceImage: UIImage)</span></span> -&gt; <span class="type">UIImage</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> newSize = <span class="type">CGSize</span>(width: sourceImage.size.width, height: sourceImage.size.height)</span><br><span class="line">        <span class="keyword">let</span> tempHeight = newSize.height / size.height</span><br><span class="line">        <span class="keyword">let</span> tempWidth = newSize.width / size.width</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> tempWidth &gt; <span class="number">1.0</span> &amp;&amp; tempWidth &gt; tempHeight &#123;</span><br><span class="line">            newSize = <span class="type">CGSize</span>(width: sourceImage.size.width / tempWidth, height: sourceImage.size.height / tempWidth)</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> tempHeight &gt; <span class="number">1.0</span> &amp;&amp; tempWidth &lt; tempHeight &#123;</span><br><span class="line">            newSize = <span class="type">CGSize</span>(width: sourceImage.size.width / tempHeight, height: sourceImage.size.height / tempHeight)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">UIGraphicsBeginImageContext</span>(newSize)</span><br><span class="line">        sourceImage.draw(<span class="keyword">in</span>: <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: newSize.width, height: newSize.height))</span><br><span class="line">        <span class="keyword">let</span> newImage = <span class="type">UIGraphicsGetImageFromCurrentImageContext</span>()</span><br><span class="line">        <span class="type">UIGraphicsEndImageContext</span>()</span><br><span class="line">        <span class="keyword">return</span> newImage!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: - 二分法</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">halfFuntion</span><span class="params">(arr: [CGFloat], image: UIImage, sourceData finallImageData: Data, maxSize: Int)</span></span> -&gt; <span class="type">Data</span>? &#123;</span><br><span class="line">        <span class="keyword">var</span> tempFinallImageData = finallImageData</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> tempData = <span class="type">Data</span>.<span class="keyword">init</span>()</span><br><span class="line">        <span class="keyword">var</span> start = <span class="number">0</span></span><br><span class="line">        <span class="keyword">var</span> end = arr.<span class="built_in">count</span> - <span class="number">1</span></span><br><span class="line">        <span class="keyword">var</span> index = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> difference = <span class="type">Int</span>.<span class="built_in">max</span></span><br><span class="line">        <span class="keyword">while</span> start &lt;= end &#123;</span><br><span class="line">            index = start + (end - start)/<span class="number">2</span></span><br><span class="line">            </span><br><span class="line">            tempFinallImageData = <span class="type">UIImageJPEGRepresentation</span>(image, arr[index])!</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> sizeOrigin = tempFinallImageData.<span class="built_in">count</span></span><br><span class="line">            <span class="keyword">let</span> sizeOriginKB = sizeOrigin / <span class="number">1024</span></span><br><span class="line">            </span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"当前降到的质量：<span class="subst">\(sizeOriginKB)</span>\n<span class="subst">\(index)</span>----<span class="subst">\(arr[index])</span>"</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> sizeOriginKB &gt; maxSize &#123;</span><br><span class="line">                start = index + <span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> sizeOriginKB &lt; maxSize &#123;</span><br><span class="line">                <span class="keyword">if</span> maxSize-sizeOriginKB &lt; difference &#123;</span><br><span class="line">                    difference = maxSize-sizeOriginKB</span><br><span class="line">                    tempData = tempFinallImageData</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> index&lt;=<span class="number">0</span> &#123;</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                &#125;</span><br><span class="line">                end = index - <span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> tempData</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Swift3-0之前旧版本压缩模式（建议不用，性能太差）"><a href="#Swift3-0之前旧版本压缩模式（建议不用，性能太差）" class="headerlink" title="Swift3.0之前旧版本压缩模式（建议不用，性能太差）"></a><del>Swift3.0之前旧版本压缩模式（建议不用，性能太差）</del></h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MARK: - 降低质量</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">resetSizeOfImageData</span><span class="params">(source_image: UIImage, maxSize: Int)</span></span> -&gt; <span class="type">NSData</span> &#123;</span><br><span class="line">        <span class="comment">//先调整分辨率</span></span><br><span class="line">        <span class="keyword">var</span> newSize = <span class="type">CGSize</span>(width: source_image.size.width, height: source_image.size.height)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> tempHeight = newSize.height / <span class="number">1024</span></span><br><span class="line">        <span class="keyword">let</span> tempWidth  = newSize.width / <span class="number">1024</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> tempWidth &gt; <span class="number">1.0</span> &amp;&amp; tempWidth &gt; tempHeight &#123;</span><br><span class="line">            newSize = <span class="type">CGSize</span>(width: source_image.size.width / tempWidth, height: source_image.size.height / tempWidth)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> tempHeight &gt; <span class="number">1.0</span> &amp;&amp; tempWidth &lt; tempHeight &#123;</span><br><span class="line">            newSize = <span class="type">CGSize</span>(width: source_image.size.width / tempHeight, height: source_image.size.height / tempHeight)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">UIGraphicsBeginImageContext</span>(newSize)</span><br><span class="line">        source_image.drawAsPatternInRect(<span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: newSize.width, height: newSize.height))</span><br><span class="line">        <span class="keyword">let</span> newImage = <span class="type">UIGraphicsGetImageFromCurrentImageContext</span>()</span><br><span class="line">        <span class="type">UIGraphicsEndImageContext</span>()</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//先判断当前质量是否满足要求，不满足再进行压缩</span></span><br><span class="line">        <span class="keyword">var</span> finallImageData = <span class="type">UIImageJPEGRepresentation</span>(newImage,<span class="number">1.0</span>)</span><br><span class="line">        <span class="keyword">let</span> sizeOrigin      = <span class="type">Int64</span>((finallImageData?.length)!)</span><br><span class="line">        <span class="keyword">let</span> sizeOriginKB    = <span class="type">Int</span>(sizeOrigin / <span class="number">1024</span>)</span><br><span class="line">        <span class="keyword">if</span> sizeOriginKB &lt;= maxSize &#123;</span><br><span class="line">            <span class="keyword">return</span> finallImageData!</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//保存压缩系数</span></span><br><span class="line">        <span class="keyword">let</span> compressionQualityArr = <span class="type">NSMutableArray</span>()</span><br><span class="line">        <span class="keyword">let</span> avg = <span class="type">CGFloat</span>(<span class="number">1.0</span>/<span class="number">250</span>)</span><br><span class="line">        <span class="keyword">var</span> value = avg</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> <span class="keyword">var</span> i = <span class="number">250</span>; i&gt;=<span class="number">1</span>; i-- &#123;</span><br><span class="line">            value = <span class="type">CGFloat</span>(i)*avg</span><br><span class="line">            compressionQualityArr.addObject(value)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//调整大小</span></span><br><span class="line">        <span class="comment">//说明：压缩系数数组compressionQualityArr是从大到小存储。</span></span><br><span class="line">        <span class="comment">//思路：折半计算，如果中间压缩系数仍然降不到目标值maxSize，则从后半部分开始寻找压缩系数；反之从前半部分寻找压缩系数</span></span><br><span class="line">        finallImageData = <span class="type">UIImageJPEGRepresentation</span>(newImage, <span class="type">CGFloat</span>(compressionQualityArr[<span class="number">125</span>] <span class="keyword">as</span>! <span class="type">NSNumber</span>))</span><br><span class="line">        <span class="keyword">if</span> <span class="type">Int</span>(<span class="type">Int64</span>((<span class="type">UIImageJPEGRepresentation</span>(newImage, <span class="type">CGFloat</span>(compressionQualityArr[<span class="number">125</span>] <span class="keyword">as</span>! <span class="type">NSNumber</span>))?.length)!)/<span class="number">1024</span>) &gt; maxSize &#123;</span><br><span class="line">            <span class="comment">//拿到最初的大小</span></span><br><span class="line">            finallImageData = <span class="type">UIImageJPEGRepresentation</span>(newImage, <span class="number">1.0</span>)</span><br><span class="line">            <span class="comment">//从后半部分开始</span></span><br><span class="line">            <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="number">126</span>..&lt;<span class="number">250</span> &#123;</span><br><span class="line">                <span class="keyword">let</span> value = compressionQualityArr[idx]</span><br><span class="line">                <span class="keyword">let</span> sizeOrigin   = <span class="type">Int64</span>((finallImageData?.length)!)</span><br><span class="line">                <span class="keyword">let</span> sizeOriginKB = <span class="type">Int</span>(sizeOrigin / <span class="number">1024</span>)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"当前降到的质量：<span class="subst">\(sizeOriginKB)</span>"</span>)</span><br><span class="line">                <span class="keyword">if</span> sizeOriginKB &gt; maxSize &#123;</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">"<span class="subst">\(idx)</span>----<span class="subst">\(value)</span>"</span>)</span><br><span class="line">                    finallImageData = <span class="type">UIImageJPEGRepresentation</span>(newImage, <span class="type">CGFloat</span>(value <span class="keyword">as</span>! <span class="type">NSNumber</span>))</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//拿到最初的大小</span></span><br><span class="line">            finallImageData = <span class="type">UIImageJPEGRepresentation</span>(newImage, <span class="number">1.0</span>)</span><br><span class="line">            <span class="comment">//从前半部分开始</span></span><br><span class="line">            <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="number">125</span> &#123;</span><br><span class="line">                <span class="keyword">let</span> value = compressionQualityArr[idx]</span><br><span class="line">                <span class="keyword">let</span> sizeOrigin   = <span class="type">Int64</span>((finallImageData?.length)!)</span><br><span class="line">                <span class="keyword">let</span> sizeOriginKB = <span class="type">Int</span>(sizeOrigin / <span class="number">1024</span>)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"当前降到的质量：<span class="subst">\(sizeOriginKB)</span>"</span>)</span><br><span class="line">                <span class="keyword">if</span> sizeOriginKB &gt; maxSize &#123;</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">"<span class="subst">\(idx)</span>----<span class="subst">\(value)</span>"</span>)</span><br><span class="line">                    finallImageData = <span class="type">UIImageJPEGRepresentation</span>(newImage, <span class="type">CGFloat</span>(value <span class="keyword">as</span>! <span class="type">NSNumber</span>))</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> finallImageData!</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>【更新日志】<br>2017年10月09日：修复了网友提出的二分法存在index为0时闪退问题。</p>
+<p>2018年05月25日：将原本默认设置图片尺寸为1024*1024改成等比放大，同时降低分辨力也改成等比降低。</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2019/07/19/swift-presentissue/" data-toggle="tooltip" data-placement="top" title="swift登录退出登录切换rootViewController完全销毁处理方案">&larr; 上一篇</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/05/08/swiftknowledge/" data-toggle="tooltip" data-placement="top" title="swiftknowledge">下一篇 &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+				
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">标签云</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Swift" title="Swift">Swift</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://github.com/enamor" target="_blank">github</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/enamor">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; zhouen 2019 
+                    <br>
+                    Powered by <a href="http://www.hexo.io">Hexo</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Theme by <a href="https://github.com/kinggozhang/hexo-theme-ace">ACE</a> 
+					
+					
+					<i class="fa fa-eye" id="leancounter"></i>
+					
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+   <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+<!-- Bootstrap Core JavaScript -->
+
+   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+	<script src="/js/particles.js"></script>
+	<script src="/js/particles_config.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://oxy.pub/2019/07/17/swiftZipImage/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://oxy.pub/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

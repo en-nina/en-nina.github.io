@@ -215,6 +215,56 @@
 
 <div class="post-preview">
 
+    <a href="/2019/07/19/swift-presentissue/">
+        <h2 class="post-title">
+            swift登录退出登录切换rootViewController完全销毁处理方案
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            present之后重新设置rootvc会出现的问题解决
+12345678910111213141516171819202122232425262728293031323334static func presentLogin() &#123;        let nav = UINavigationController.init(rootViewController: LSLoginView......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by zhouen on
+            2019-07-19
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
+    <a href="/2019/07/17/swiftZipImage/">
+        <h2 class="post-title">
+            swiftZipImage
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            iOS图片压缩上传需求很多时候我们上传图片经常遇到一些问题，要不就是图片质量变差，要不就是图片太大等等问题。这里，我找到了一个算是目前比较符合需求的解决方案。在原有基础上增加了动态压缩系数，改写成Swift版本，最底下贴出OC版本。
+实现思路先调整分辨率，分辨率可以自己设定一个值，大于的就缩小到这分辨率，小余的就保持原本分辨率。然后再根据图片最终大小来设置压缩比，比如传入maxSize = ......
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by zhouen on
+            2019-07-17
+        </p>
+    
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+
     <a href="/2019/05/08/swiftknowledge/">
         <h2 class="post-title">
             swiftknowledge
@@ -713,57 +763,6 @@ demo源码已经迁移至Github    &lt;https://github.com/enamor/ssm
 <hr>
 
 
-<div class="post-preview">
-
-    <a href="/2015/09/08/AndroidTinyPoint/">
-        <h2 class="post-title">
-            安卓学习复习笔记
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            进入应用程序主界面123456789/** * 进入应用程序主界面 */protected void enterHome() &#123;	Intent intent = new Intent(this,HomeActivity.class);	startActivity(intent);	//在开启一个新的界面后,将导航界面关闭(导航界面只可见一次)	finish();&#125;
-获取版......
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by zhouen on
-            2015-09-08
-        </p>
-    
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-
-    <a href="/2015/06/01/iOSTinyPoint/">
-        <h2 class="post-title">
-            iOS小知识点集锦
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            [TOC]
-###iOS10 AVPlayer有时播放失败的处理
-1234567891011121314151617181920212223242526//如果你的视频使用的是HLS(m3u8)协议的，是不会由于升级ios10出现这个播放问题的。 如果不是基于HLS协议的，解决方法如下if([[UIDevice currentDevice] systemVersion].intValue&g......
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by zhouen on
-            2015-06-01
-        </p>
-    
-
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -801,7 +800,7 @@ demo源码已经迁移至Github    &lt;https://github.com/enamor/ssm
     <div class="tags">
         
             
-            <a href="/tags/#Swift" title="Swift" rel="2">Swift</a>
+            <a href="/tags/#Swift" title="Swift" rel="4">Swift</a>
             
         
             
@@ -893,6 +892,14 @@ demo源码已经迁移至Github    &lt;https://github.com/enamor/ssm
     <ul>
       
         <li>
+          <a href="/2019/07/19/swift-presentissue/">swift登录退出登录切换rootViewController完全销毁处理方案</a>
+        </li>
+      
+        <li>
+          <a href="/2019/07/17/swiftZipImage/">swiftZipImage</a>
+        </li>
+      
+        <li>
           <a href="/2019/05/08/swiftknowledge/">swiftknowledge</a>
         </li>
       
@@ -904,14 +911,6 @@ demo源码已经迁移至Github    &lt;https://github.com/enamor/ssm
           <a href="/2018/10/19/iphoneXseries/">iphoneX系列适配用的宏定义</a>
         </li>
       
-        <li>
-          <a href="/2018/10/17/vuejs1/">在vuejs 中使用axios不能获取属性data的解决方法</a>
-        </li>
-      
-        <li>
-          <a href="/2018/10/12/uipage/">UIPageViewController上下滑动页面重复Bug解决方案</a>
-        </li>
-      
     </ul>
   </div>
 
@@ -920,7 +919,7 @@ demo源码已经迁移至Github    &lt;https://github.com/enamor/ssm
         
     <h5>归档</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
         <hr>
