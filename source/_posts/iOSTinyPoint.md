@@ -323,12 +323,34 @@ self.titleLabel.attributedText = [self getParagraphText:infModel.title LineSpaci
 ### 全屏幕拖动返回简单实现
 
 ~~~objective-c
-BaseNavigationController<UIGestureRecognizerDelegate>
-//viewDidLoad中添加如下代码
-id target = self.interactivePopGestureRecognizer.delegate;
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
-    [self.view addGestureRecognizer:pan];
-    self.interactivePopGestureRecognizer.enabled = NO;
+
+  viewDidLoad方法中添加   
+	//1.获取系统右滑手势对应的 target 和 action
+        
+        //1.1 获取系统右滑返回手势
+        guard let systemGesture = interactivePopGestureRecognizer else { return }
+        
+        //1.2获取手势对应的 target-action 对象
+        let targets = systemGesture.value(forKey: "_targets") as? [NSObject]
+        guard let targetObjc = targets?.first else { return }
+        
+        //1.3获取target
+        guard let target = targetObjc.value(forKey: "target") else { return }
+        
+        //1.4获取action
+        let action = Selector(("handleNavigationTransition:"))
+        
+        //2.创建自定义手势,并赋值 target, action
+        let customGesture = UIPanGestureRecognizer()
+        customGesture.addTarget(target, action: action)
+        
+        //3.将自定义手势添加到系统手势的view上
+        guard let gestureView = systemGesture.view else { return }
+        gestureView.addGestureRecognizer(customGesture)
+
+
+
+
 ~~~
 
 ### 导航栏隐藏显示
