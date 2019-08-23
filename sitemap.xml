@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://oxy.pub/2015/06/01/iOSTinyPoint/</loc>
+    
+    <lastmod>2019-08-23T12:33:12.274Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://oxy.pub/2019/07/19/swift-presentissue/</loc>
     
     <lastmod>2019-07-19T08:05:40.608Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://oxy.pub/2016/04/22/ssm1/</loc>
     
     <lastmod>2019-03-04T11:38:48.128Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://oxy.pub/2015/06/01/iOSTinyPoint/</loc>
-    
-    <lastmod>2018-12-05T10:15:08.433Z</lastmod>
     
   </url>
   
