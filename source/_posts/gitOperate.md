@@ -177,6 +177,30 @@ rm -rf .git
 
 ------
 
+**tags**
+
+```shell
+//删除tag
+git tag -d 标签名  
+例如：git tag -d v3.1.0
+
+//git 删除远程标签
+git push origin :refs/tags/标签名  
+例如：git push origin :refs/tags/v3.1.0
+
+//添加 tag
+git tag 标签名
+例如：git tag v2.0.0
+
+//提交tag到 远端
+git push origin 标签名
+例如：git push origin v2.0.0
+```
+
+
+
+------
+
 **Problems and Solutions**
 
 1. git push -u origin master 遇到错误The requested URL returned error: 403 Forbidden while accessing
@@ -202,5 +226,17 @@ git pull --rebase origin master
 
 
 
+**让 .gitignore 文件生效**
 
+~~~
+让 .gitignore 文件生效
+查看.gitignore文件名是否写错
+对照网上的资料查看规则有没有写错
+下面是最重要的重置缓存。
+git rm -r --cached . -->清除缓存
+git add . -->添加缓存
+git commit -m “添加过滤文件”
+备注：注意你所处的分支，如果你在当前分支修改，切换到其他分支是不生效的，如果多人开发，注意合并修改！
+
+~~~
 
