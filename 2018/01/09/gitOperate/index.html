@@ -236,6 +236,9 @@
 <p><strong>Ignore the file</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">touch .gitignore</span><br><span class="line"></span><br><span class="line">//例：iOS过滤第三方库文件 修改.gitignore 文件加入一下文本</span><br><span class="line">.DS_Store</span><br><span class="line">*.xcworkspace</span><br><span class="line">xcuserdata</span><br><span class="line">*.lock</span><br><span class="line">Pods</span><br><span class="line"></span><br><span class="line">//进入目录删除已经存在的git (有的文件中已经存在git导致无法提交)</span><br><span class="line">rm -rf .git</span><br></pre></td></tr></table></figure>
 <hr>
+<p><strong>tags</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//删除tag</span><br><span class="line">git tag -d 标签名  </span><br><span class="line">例如：git tag -d v3.1.0</span><br><span class="line"></span><br><span class="line">//git 删除远程标签</span><br><span class="line">git push origin :refs/tags/标签名  </span><br><span class="line">例如：git push origin :refs/tags/v3.1.0</span><br><span class="line"></span><br><span class="line">//添加 tag</span><br><span class="line">git tag 标签名</span><br><span class="line">例如：git tag v2.0.0</span><br><span class="line"></span><br><span class="line">//提交tag到 远端</span><br><span class="line">git push origin 标签名</span><br><span class="line">例如：git push origin v2.0.0</span><br></pre></td></tr></table></figure>
+<hr>
 <p><strong>Problems and Solutions</strong></p>
 <ol>
 <li>git push -u origin master 遇到错误The requested URL returned error: 403 Forbidden while accessing</li>
@@ -247,6 +250,8 @@
 </li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br><span class="line"></span><br><span class="line">//这条指令的意思是把远程库中的更新合并到本地库中，–rebase的作用是取消掉本地库中刚刚的commit，并把他们接到更新后的版本库之中。</span><br></pre></td></tr></table></figure>
+<p><strong>让 .gitignore 文件生效</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">让 .gitignore 文件生效</span><br><span class="line">查看.gitignore文件名是否写错</span><br><span class="line">对照网上的资料查看规则有没有写错</span><br><span class="line">下面是最重要的重置缓存。</span><br><span class="line">git rm -r --cached . --&gt;清除缓存</span><br><span class="line">git add . --&gt;添加缓存</span><br><span class="line">git commit -m “添加过滤文件”</span><br><span class="line">备注：注意你所处的分支，如果你在当前分支修改，切换到其他分支是不生效的，如果多人开发，注意合并修改！</span><br></pre></td></tr></table></figure>
 
                 
 
@@ -403,7 +408,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; zhouen 2019 
+                    Copyright &copy; zhouen 2020 
                     <br>
                     Powered by <a href="http://www.hexo.io">Hexo</a> 
                     <span style="display: inline-block; margin: 0 5px;">

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://oxy.pub/2018/01/09/gitOperate/</loc>
+    
+    <lastmod>2020-08-22T10:14:33.475Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://oxy.pub/2020/03/04/swiftTip/</loc>
+    
+    <lastmod>2020-03-04T08:25:01.119Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://oxy.pub/2015/06/01/iOSTinyPoint/</loc>
     
     <lastmod>2019-08-23T12:33:12.274Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>http://oxy.pub/2018/10/19/iphoneXseries/</loc>
     
     <lastmod>2019-07-16T05:07:59.162Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://oxy.pub/2018/01/09/gitOperate/</loc>
-    
-    <lastmod>2019-07-12T03:26:28.480Z</lastmod>
     
   </url>
   
